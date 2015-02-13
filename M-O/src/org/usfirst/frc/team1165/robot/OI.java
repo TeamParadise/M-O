@@ -9,6 +9,8 @@ import org.usfirst.frc.team1165.robot.commands.PickupWheelsSpinOut;
 import org.usfirst.frc.team1165.robot.commands.PickupWheelsSpinRight;
 import org.usfirst.frc.team1165.robot.commands.PickupWheelsStop;
 import org.usfirst.frc.team1165.robot.commands.ReportEncoder;
+import org.usfirst.frc.team1165.robot.commands.ResetEncoder;
+import org.usfirst.frc.team1165.robot.commands.ResetGyro;
 import org.usfirst.frc.team1165.robot.commands.RotateToHeading;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -50,6 +52,9 @@ public class OI
 		SmartDashboard.putData(new PickupWheelsSpinOut());
 		SmartDashboard.putData(new PickupWheelsSpinRight());
 		SmartDashboard.putData(new PickupWheelsSpinLeft());
+		
+		SmartDashboard.putData(new ResetGyro());
+		SmartDashboard.putData(new ResetEncoder());
 	}
 
 	public double getDampening()
