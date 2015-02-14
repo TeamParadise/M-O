@@ -6,8 +6,8 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team1165.robot.commands.RunAutonomous;
-import org.usfirst.frc.team1165.robot.commands.RunBoxPickupWheelsFromJoystick;
 import org.usfirst.frc.team1165.robot.subsystems.BoxPickupWheels;
+import org.usfirst.frc.team1165.robot.subsystems.Camera;
 import org.usfirst.frc.team1165.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team1165.robot.subsystems.QuadEncoder;
 import org.usfirst.frc.team1165.robot.subsystems.Gyroscope;
@@ -20,6 +20,7 @@ public class Robot extends IterativeRobot
 	public static final Gyroscope gyroscope = new Gyroscope();
 	public static final QuadEncoder quadEncoder = new QuadEncoder();
 	public static final BoxPickupWheels boxPickupWheels = new BoxPickupWheels();
+	public static final Camera camera = new Camera();
 	public static OI oi;
 
 	Command autonomousCommand;

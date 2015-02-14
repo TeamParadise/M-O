@@ -42,4 +42,8 @@ public class RobotMap
     // BoxPickupWheels
 	public static final int leftBoxPickupWheel      = 8;
 	public static final int rightBoxPickupWheel     = 9;
+	
+	// USB Camera Name
+	public final static String cameraName = "cam11";
+
 }
