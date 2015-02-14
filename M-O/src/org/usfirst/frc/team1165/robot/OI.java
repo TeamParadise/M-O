@@ -13,6 +13,7 @@ import org.usfirst.frc.team1165.robot.commands.PickupWheelsStop;
 import org.usfirst.frc.team1165.robot.commands.ResetEncoder;
 import org.usfirst.frc.team1165.robot.commands.ResetGyro;
 import org.usfirst.frc.team1165.robot.commands.RotateToHeading;
+import org.usfirst.frc.team1165.robot.commands.TogglePickupWheels;
 import org.usfirst.frc.team1165.robot.commands.piston.LiftTotes;
 import org.usfirst.frc.team1165.robot.commands.piston.LowerTotes;
 import org.usfirst.frc.team1165.robot.commands.piston.MovePickupWheelsIn;
@@ -82,6 +83,8 @@ public class OI
 		SmartDashboard.putData(new ResetEncoder());
 		
 		// Button mapping
+		secondaryButton2.whenPressed(new TogglePickupWheels());
+		
 		secondaryButton3.whenPressed(new EngageToteLifterStops());
 		secondaryButton5.whenPressed(new DisengageToteLifterStops());
 		

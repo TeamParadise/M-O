@@ -28,7 +28,9 @@ public class DriveWithJoystick extends Command
 
         calX     = dampingFactor*calX*calX*calX             + (1-dampingFactor)*calX; 
         calY     = dampingFactor*calY*calY*calY             + (1-dampingFactor)*calY; 
-        calTwist = dampingFactor*calTwist*calTwist*calTwist + (1-dampingFactor)*calTwist; 
+        calTwist = dampingFactor*calTwist*calTwist*calTwist + (1-dampingFactor)*calTwist;
+        
+        calTwist *= 2.0/3;
 
         Robot.driveTrain.driveCartesian(calX, calY, calTwist, 0);
     }

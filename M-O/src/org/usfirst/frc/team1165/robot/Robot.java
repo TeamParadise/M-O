@@ -1,12 +1,10 @@
 package org.usfirst.frc.team1165.robot;
 
-import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
-import org.usfirst.frc.team1165.robot.commands.RunAutonomous;
 import org.usfirst.frc.team1165.robot.subsystems.BoxPickupWheels;
 import org.usfirst.frc.team1165.robot.subsystems.Camera;
 import org.usfirst.frc.team1165.robot.subsystems.DriveTrain;
@@ -26,16 +24,13 @@ public class Robot extends IterativeRobot
 	public static final ToteLifterStops toteLifterStops = new ToteLifterStops();
 	public static OI oi;
 	
-	//Compressor compressor = new Compressor();
-
 	Command autonomousCommand;
 
 	public void robotInit()
 	{
 		oi = new OI();
 
-		//compressor.setClosedLoopControl(true);
-		autonomousCommand = new RunAutonomous();
+		//autonomousCommand = new RunAutonomous();
 	}
 
 	public void disabledPeriodic()
