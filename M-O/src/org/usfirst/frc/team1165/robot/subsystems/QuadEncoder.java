@@ -31,6 +31,7 @@ public class QuadEncoder extends Subsystem {
     	double distancePerTick = 6*Math.PI/280;
     	SmartDashboard.putNumber("Encoder Tick Distance", getTicks());
     	SmartDashboard.putNumber("Encoder Distance", distancePerTick*getTicks());
+    	SmartDashboard.putNumber("Encoder Ticks", getTicks());
     }
     
     public double getInches()

@@ -48,7 +48,7 @@ public class RobotMap
 	
 	public static final double leftServoEngagePosition 		= 0.72; 	//   130 / 180
 	public static final double rightServoEngagePosition 	= 0.27; 	//    50 / 180
-	public static final double leftServoDisengagePosition 	= 0.45;
+	public static final double leftServoDisengagePosition 	= 0.425;
 	public static final double rightServoDisengagePosition 	= 0.5;
 	
 	// PCM and Solenoids
