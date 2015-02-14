@@ -11,6 +11,10 @@ import org.usfirst.frc.team1165.robot.commands.PickupWheelsStop;
 import org.usfirst.frc.team1165.robot.commands.ResetEncoder;
 import org.usfirst.frc.team1165.robot.commands.ResetGyro;
 import org.usfirst.frc.team1165.robot.commands.RotateToHeading;
+import org.usfirst.frc.team1165.robot.commands.piston.LiftTotes;
+import org.usfirst.frc.team1165.robot.commands.piston.LowerTotes;
+import org.usfirst.frc.team1165.robot.commands.piston.MovePickupWheelsIn;
+import org.usfirst.frc.team1165.robot.commands.piston.MovePickupWheelsOut;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -52,6 +56,11 @@ public class OI
 		SmartDashboard.putData(new PickupWheelsSpinRight());
 		SmartDashboard.putData(new PickupWheelsSpinLeft());
 		
+		SmartDashboard.putData(new LiftTotes());
+		SmartDashboard.putData(new LowerTotes());
+		SmartDashboard.putData(new MovePickupWheelsIn());
+		SmartDashboard.putData(new MovePickupWheelsOut());
+
 		SmartDashboard.putData(new ResetGyro());
 		SmartDashboard.putData(new ResetEncoder());
 	}
@@ -86,5 +95,10 @@ public class OI
 		// Pushing forward on the joystick returns negative y values.
 		// We want the reverse of that.
 		return -secondaryJoystick.getY();
+	}
+	
+	public double twistAngle()
+	{
+		return secondaryJoystick.getTwist();
 	}
 }

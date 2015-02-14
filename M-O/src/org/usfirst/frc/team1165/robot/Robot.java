@@ -9,9 +9,11 @@ import org.usfirst.frc.team1165.robot.commands.RunAutonomous;
 import org.usfirst.frc.team1165.robot.subsystems.BoxPickupWheels;
 import org.usfirst.frc.team1165.robot.subsystems.Camera;
 import org.usfirst.frc.team1165.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team1165.robot.subsystems.Piston;
 import org.usfirst.frc.team1165.robot.subsystems.QuadEncoder;
 import org.usfirst.frc.team1165.robot.subsystems.Gyroscope;
 import org.usfirst.frc.team1165.robot.subsystems.RangeFinder;
+import org.usfirst.frc.team1165.robot.subsystems.ServoMotor;
 
 public class Robot extends IterativeRobot
 {
@@ -21,6 +23,8 @@ public class Robot extends IterativeRobot
 	public static final QuadEncoder quadEncoder = new QuadEncoder();
 	public static final BoxPickupWheels boxPickupWheels = new BoxPickupWheels();
 	public static final Camera camera = new Camera();
+	public static final ServoMotor leftServoMotor = new ServoMotor(RobotMap.leftServoMotorChannel);
+	public static final ServoMotor rightServoMotor = new ServoMotor(RobotMap.rightServoMotorChannel);
 	public static OI oi;
 
 	Command autonomousCommand;
