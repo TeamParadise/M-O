@@ -9,10 +9,18 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class PickupWheelsSpinOut extends Command
 {
+	private double magnitude = 0.5;
 
 	public PickupWheelsSpinOut()
 	{
 		requires(Robot.boxPickupWheels);
+	}
+
+	public PickupWheelsSpinOut(double magnitude, double timeout)
+	{
+		this();
+		this.magnitude = magnitude;
+		setTimeout(timeout);
 	}
 
 	// Called just before this Command runs the first time
@@ -24,13 +32,13 @@ public class PickupWheelsSpinOut extends Command
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
 	{
-		Robot.boxPickupWheels.spinOut(0.5);
+		Robot.boxPickupWheels.spinOut(magnitude);
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished()
 	{
-		return false;
+		return isTimedOut();
 	}
 
 	// Called once after isFinished returns true

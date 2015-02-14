@@ -25,6 +25,7 @@ public class TogglePickupWheels extends Command
 	{
 		Robot.boxPickupWheels.spinIn(1.0);
 		isTurning = true;
+		hasButtonBeenReleased = false;
 	}
 
 	// Called repeatedly when this Command is scheduled to run
@@ -37,7 +38,7 @@ public class TogglePickupWheels extends Command
 		
 		if (hasButtonBeenReleased && button.get())
 		{
-			isTurning = true;
+			isTurning = false;
 		}		
 	}
 

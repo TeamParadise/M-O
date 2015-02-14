@@ -6,6 +6,7 @@ import org.usfirst.frc.team1165.robot.commands.DriveStraightDistance;
 import org.usfirst.frc.team1165.robot.commands.DriveToObject;
 import org.usfirst.frc.team1165.robot.commands.EngageToteLifterStops;
 import org.usfirst.frc.team1165.robot.commands.ExcreteOnScoringPlatform;
+import org.usfirst.frc.team1165.robot.commands.ExcreteOnStep;
 import org.usfirst.frc.team1165.robot.commands.PickupTote;
 import org.usfirst.frc.team1165.robot.commands.PickupWheelsSpinIn;
 import org.usfirst.frc.team1165.robot.commands.PickupWheelsSpinLeft;
@@ -51,26 +52,29 @@ public class OI
     
 	public OI()
 	{
+		// Smart dashbaord numbers
 		SmartDashboard.putNumber("Dampening", .9);
 	
 		SmartDashboard.putNumber("Forward Speed", -1);
-		SmartDashboard.putData(new DriveStraight("Forward Speed", 0.5));
 
 		SmartDashboard.putNumber("Drive Inches", 53);
-		SmartDashboard.putData(new DriveStraightDistance("Forward Speed", "Drive Inches"));
 
 		SmartDashboard.putNumber("Target Range", 19);
 		SmartDashboard.putNumber("Brake Range", 50);
 		SmartDashboard.putNumber("Creep Speed", -.2);
-		SmartDashboard.putData(new DriveToObject("Forward Speed", "Brake Range", "Target Range", "Creep Speed"));
 
 		SmartDashboard.putNumber("Target Heading", 45);
 		SmartDashboard.putNumber("Brake Heading", 10);
 		SmartDashboard.putNumber("Rotate Magnitude", .4);
 		SmartDashboard.putNumber("Creep Magnitude", .2);
+		
+		// Smart dashboard buttons
+		SmartDashboard.putData(new DriveStraightDistance("Forward Speed", "Drive Inches"));
+		SmartDashboard.putData(new DriveStraightDistance("Forward Speed", "Drive Inches"));
+		SmartDashboard.putData(new DriveToObject("Forward Speed", "Brake Range", "Target Range", "Creep Speed"));
 		SmartDashboard.putData(new RotateToHeading("Rotate Magnitude", "Brake Heading", "Target Heading",
 				"Creep Magnitude"));
-		
+
 		SmartDashboard.putData(new PickupWheelsStop());
 		SmartDashboard.putData(new PickupWheelsSpinIn());
 		SmartDashboard.putData(new PickupWheelsSpinOut());
@@ -79,17 +83,22 @@ public class OI
 		
 		SmartDashboard.putData(new LiftTotes());
 		SmartDashboard.putData(new LowerTotes());
+		
 		SmartDashboard.putData(new MovePickupWheelsIn());
 		SmartDashboard.putData(new MovePickupWheelsOut());
+		
 		SmartDashboard.putData(new EngageToteLifterStops());
 		SmartDashboard.putData(new DisengageToteLifterStops());
+		
 		SmartDashboard.putData(new PickupTote());
+		
 		SmartDashboard.putData(new ExcreteOnScoringPlatform());
+		SmartDashboard.putData(new ExcreteOnStep());
 
 		SmartDashboard.putData(new ResetGyro());
 		SmartDashboard.putData(new ResetEncoder());
 		
-		// Button mapping
+		// Joystick button mapping
 		secondaryButton2.whenPressed(new TogglePickupWheels(secondaryButton2));
 		
 		secondaryButton3.whenPressed(new EngageToteLifterStops());
@@ -100,7 +109,8 @@ public class OI
 		
 		secondaryButton7.whenPressed(new LowerTotes());
 		secondaryButton8.whenPressed(new LiftTotes());
-		secondaryButton11.whenPressed(new ExcreteOnScoringPlatform());
+		secondaryButton9.whenPressed(new ExcreteOnScoringPlatform());
+		secondaryButton10.whenPressed(new ExcreteOnStep());
 		secondaryButton12.whenPressed(new PickupTote());
 	}
 
