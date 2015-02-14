@@ -3,13 +3,13 @@ package org.usfirst.frc.team1165.robot.subsystems;
 import org.usfirst.frc.team1165.robot.RobotMap;
 import org.usfirst.frc.team1165.robot.commands.RunBoxPickupWheelsFromJoystick;
 
-import edu.wpi.first.wpilibj.Victor;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class BoxPickupWheels extends Subsystem
 {
-	Victor leftPickupWheel = new Victor(RobotMap.leftBoxPickupWheel);
-	Victor rightPickupWheel = new Victor(RobotMap.rightBoxPickupWheel);
+	Talon leftPickupWheel = new Talon(RobotMap.leftBoxPickupWheel);
+	Talon rightPickupWheel = new Talon(RobotMap.rightBoxPickupWheel);
 
 	/**
 	 * Accepts a value in the form of a double or float from -1 to 1 and takes
@@ -21,8 +21,8 @@ public class BoxPickupWheels extends Subsystem
 	public void spinOut(double speed)
 	{
 		speed = Math.min(Math.abs(speed), 1);
-		leftPickupWheel.set(-speed);
-		rightPickupWheel.set(speed);
+		leftPickupWheel.set(speed);
+		rightPickupWheel.set(-speed);
 	}
 
 	/**
@@ -35,8 +35,8 @@ public class BoxPickupWheels extends Subsystem
 	public void spinIn(double speed)
 	{
 		speed = Math.min(Math.abs(speed), 1);
-		leftPickupWheel.set(speed);
-		rightPickupWheel.set(-speed);
+		leftPickupWheel.set(-speed);
+		rightPickupWheel.set(speed);
 	}
 
 	/**
@@ -48,8 +48,8 @@ public class BoxPickupWheels extends Subsystem
 	public void spinRight(double speed)
 	{
 		speed = Math.min(Math.abs(speed), 1);
-		leftPickupWheel.set(speed);
-		rightPickupWheel.set(speed);
+		leftPickupWheel.set(-speed);
+		rightPickupWheel.set(-speed);
 	}
 
 	/**
@@ -62,8 +62,8 @@ public class BoxPickupWheels extends Subsystem
 	public void spinLeft(double speed)
 	{
 		speed = Math.min(Math.abs(speed), 1);
-		leftPickupWheel.set(-speed);
-		rightPickupWheel.set(-speed);
+		leftPickupWheel.set(speed);
+		rightPickupWheel.set(speed);
 	}
 
 	/**

@@ -1,7 +1,7 @@
 package org.usfirst.frc.team1165.robot.subsystems;
 
+import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.RobotDrive;
-import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.RobotDrive.MotorType;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -15,10 +15,10 @@ public class DriveTrain extends Subsystem
 	public DriveTrain()
 	{
 		robotDrive = new RobotDrive(
-				new Talon(RobotMap.frontLeftMotorChannel),
-				new Talon(RobotMap.frontRightMotorChannel),
-				new Talon(RobotMap.rearLeftMotorChannel),
-				new Talon(RobotMap.rearRightMotorChannel));
+				new CANTalon(RobotMap.frontLeftMotorChannel),
+				new CANTalon(RobotMap.frontRightMotorChannel),
+				new CANTalon(RobotMap.rearLeftMotorChannel),
+				new CANTalon(RobotMap.rearRightMotorChannel));
 
 		// Invert the left side motors
 		robotDrive.setInvertedMotor(MotorType.kFrontLeft, true);

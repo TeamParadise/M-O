@@ -1,5 +1,6 @@
 package org.usfirst.frc.team1165.robot;
 
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -24,6 +25,8 @@ public class Robot extends IterativeRobot
 	public static final Camera camera = new Camera();
 	public static final ToteLifterStops toteLifterStops = new ToteLifterStops();
 	public static OI oi;
+	
+	//Compressor compressor = new Compressor();
 
 	Command autonomousCommand;
 
@@ -31,6 +34,7 @@ public class Robot extends IterativeRobot
 	{
 		oi = new OI();
 
+		//compressor.setClosedLoopControl(true);
 		autonomousCommand = new RunAutonomous();
 	}
 

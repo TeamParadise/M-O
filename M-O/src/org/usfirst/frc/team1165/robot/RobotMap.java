@@ -36,19 +36,19 @@ public class RobotMap
     public static final int joystickPort2					= 2;
     
     // Encoder 
-    public static final int encoderChannelA					= 8;
-    public static final int encoderChannelB					= 9;
+    public static final int encoderChannelA					= 2;
+    public static final int encoderChannelB					= 3;
     
 	public static final int leftServoChannel 				= 4;
 	public static final int rightServoChannel				= 5;
 	
     // BoxPickupWheels
-	public static final int leftBoxPickupWheel				= 8;
-	public static final int rightBoxPickupWheel     		= 9;
+	public static final int leftBoxPickupWheel				= 1;
+	public static final int rightBoxPickupWheel     		= 0;
 	
 	public static final double leftServoEngagePosition 		= 0.72; 	//   130 / 180
 	public static final double rightServoEngagePosition 	= 0.27; 	//    50 / 180
-	public static final double leftServoDisengagePosition 	= 0.5;
+	public static final double leftServoDisengagePosition 	= 0.45;
 	public static final double rightServoDisengagePosition 	= 0.5;
 	
 	// PCM and Solenoids
@@ -58,6 +58,6 @@ public class RobotMap
 	public static final int toteLifterPistonOutChannel		= 3;
 	
 	// USB Camera Name
-	public final static String cameraName = "cam11";
+	public final static String cameraName = "cam0";
 
 }
