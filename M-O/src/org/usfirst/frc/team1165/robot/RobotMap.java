@@ -19,9 +19,9 @@ public class RobotMap
     // public static int rangefinderModule = 1;
     
     // Wheel motors: Digital I/O PWM
-    public static final int frontLeftMotorChannel			= 2;
+    public static final int frontLeftMotorChannel			= 0;
     public static final int frontRightMotorChannel			= 3;
-    public static final int rearLeftMotorChannel			= 0;
+    public static final int rearLeftMotorChannel			= 2;
     public static final int rearRightMotorChannel			= 1;
     
     // Ultrasonic sensor

@@ -12,8 +12,6 @@ public class ResetEncoder extends Command
 
 	public ResetEncoder()
 	{
-		// Use requires() here to declare subsystem dependencies
-		// eg. requires(chassis);
 		requires(Robot.quadEncoder);
 	}
 

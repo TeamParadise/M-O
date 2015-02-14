@@ -2,49 +2,34 @@ package org.usfirst.frc.team1165.robot.commands;
 
 import org.usfirst.frc.team1165.robot.Robot;
 
-import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class TogglePickupWheels extends Command
+public class CaptureTote extends Command
 {
-	private boolean isTurning = false;
-	private Button button;
-	private boolean hasButtonBeenReleased;
 
-	public TogglePickupWheels(Button button)
+	public CaptureTote()
 	{
 		requires(Robot.boxPickupWheels);
-		this.button = button;
 	}
 
 	// Called just before this Command runs the first time
 	protected void initialize()
 	{
 		Robot.boxPickupWheels.spinIn(1.0);
-		isTurning = true;
 	}
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
 	{
-		if (!hasButtonBeenReleased)
-		{
-			hasButtonBeenReleased = !button.get();
-		}
-		
-		if (hasButtonBeenReleased && button.get())
-		{
-			isTurning = true;
-		}		
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished()
 	{
-		return !isTurning;
+		return Robot.rangeFinder.getRange() < 7.5;
 	}
 
 	// Called once after isFinished returns true
@@ -57,6 +42,5 @@ public class TogglePickupWheels extends Command
 	// subsystems is scheduled to run
 	protected void interrupted()
 	{
-		end();
 	}
 }

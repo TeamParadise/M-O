@@ -5,6 +5,8 @@ import org.usfirst.frc.team1165.robot.commands.DriveStraight;
 import org.usfirst.frc.team1165.robot.commands.DriveStraightDistance;
 import org.usfirst.frc.team1165.robot.commands.DriveToObject;
 import org.usfirst.frc.team1165.robot.commands.EngageToteLifterStops;
+import org.usfirst.frc.team1165.robot.commands.ExcreteOnScoringPlatform;
+import org.usfirst.frc.team1165.robot.commands.PickupTote;
 import org.usfirst.frc.team1165.robot.commands.PickupWheelsSpinIn;
 import org.usfirst.frc.team1165.robot.commands.PickupWheelsSpinLeft;
 import org.usfirst.frc.team1165.robot.commands.PickupWheelsSpinOut;
@@ -43,6 +45,9 @@ public class OI
     private final Button secondaryButton8 = new JoystickButton(secondaryJoystick, 8);
     private final Button secondaryButton9 = new JoystickButton(secondaryJoystick, 9);
     private final Button secondaryButton10 = new JoystickButton(secondaryJoystick, 10);
+    private final Button secondaryButton11 = new JoystickButton(secondaryJoystick, 11);
+    private final Button secondaryButton12 = new JoystickButton(secondaryJoystick, 12);
+    
     
 	public OI()
 	{
@@ -78,12 +83,14 @@ public class OI
 		SmartDashboard.putData(new MovePickupWheelsOut());
 		SmartDashboard.putData(new EngageToteLifterStops());
 		SmartDashboard.putData(new DisengageToteLifterStops());
+		SmartDashboard.putData(new PickupTote());
+		SmartDashboard.putData(new ExcreteOnScoringPlatform());
 
 		SmartDashboard.putData(new ResetGyro());
 		SmartDashboard.putData(new ResetEncoder());
 		
 		// Button mapping
-		secondaryButton2.whenPressed(new TogglePickupWheels());
+		secondaryButton2.whenPressed(new TogglePickupWheels(secondaryButton2));
 		
 		secondaryButton3.whenPressed(new EngageToteLifterStops());
 		secondaryButton5.whenPressed(new DisengageToteLifterStops());
@@ -93,6 +100,8 @@ public class OI
 		
 		secondaryButton7.whenPressed(new LowerTotes());
 		secondaryButton8.whenPressed(new LiftTotes());
+		secondaryButton11.whenPressed(new ExcreteOnScoringPlatform());
+		secondaryButton12.whenPressed(new PickupTote());
 	}
 
 	public double getDampening()
