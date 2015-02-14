@@ -1,41 +1,37 @@
 package org.usfirst.frc.team1165.robot.commands;
 
 import org.usfirst.frc.team1165.robot.Robot;
-import org.usfirst.frc.team1165.robot.RobotMap;
-
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class DisengageToteLifterStops extends Command {
+public class DisengageToteLifterStops extends Command
+{
+	public DisengageToteLifterStops()
+	{
+		requires(Robot.toteLifterStops);
+	}
 
-    public DisengageToteLifterStops() {
-        requires(Robot.leftServoMotor);
-        requires(Robot.rightServoMotor);
-    }
+	protected void initialize()
+	{
+	}
 
-    // Called just before this Command runs the first time
-    protected void initialize() {
-    }
+	protected void execute()
+	{
+		Robot.toteLifterStops.disengage();
+	}
 
-    // Called repeatedly when this Command is scheduled to run
-    protected void execute() {
-       	Robot.rightServoMotor.setPosition(RobotMap.rightServoDisengagePosition);
-    	Robot.leftServoMotor.setPosition(RobotMap.leftServoDisengagePosition);
-    }
+	protected boolean isFinished()
+	{
+		return true;
+	}
 
-    // Make this return true when this Command no longer needs to run execute()
-    protected boolean isFinished() {
-        return true;
-    }
+	protected void end()
+	{
+	}
 
-    // Called once after isFinished returns true
-    protected void end() {
-    }
-
-    // Called when another command which requires one or more of the same
-    // subsystems is scheduled to run
-    protected void interrupted() {
-    }
+	protected void interrupted()
+	{
+	}
 }

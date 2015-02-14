@@ -19,6 +19,8 @@ import org.usfirst.frc.team1165.robot.commands.piston.MovePickupWheelsIn;
 import org.usfirst.frc.team1165.robot.commands.piston.MovePickupWheelsOut;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
@@ -30,6 +32,17 @@ public class OI
 	private final Joystick mainJoystick = new Joystick(RobotMap.joystickPort1);
 	private final Joystick secondaryJoystick = new Joystick(RobotMap.joystickPort2);
 
+    private final Button secondaryButton1 = new JoystickButton(secondaryJoystick, 1);
+    private final Button secondaryButton2 = new JoystickButton(secondaryJoystick, 2);
+    private final Button secondaryButton3 = new JoystickButton(secondaryJoystick, 3);
+    private final Button secondaryButton4 = new JoystickButton(secondaryJoystick, 4);
+    private final Button secondaryButton5 = new JoystickButton(secondaryJoystick, 5);
+    private final Button secondaryButton6 = new JoystickButton(secondaryJoystick, 6);
+    private final Button secondaryButton7 = new JoystickButton(secondaryJoystick, 7);
+    private final Button secondaryButton8 = new JoystickButton(secondaryJoystick, 8);
+    private final Button secondaryButton9 = new JoystickButton(secondaryJoystick, 9);
+    private final Button secondaryButton10 = new JoystickButton(secondaryJoystick, 10);
+    
 	public OI()
 	{
 		SmartDashboard.putNumber("Dampening", .9);
@@ -67,6 +80,16 @@ public class OI
 
 		SmartDashboard.putData(new ResetGyro());
 		SmartDashboard.putData(new ResetEncoder());
+		
+		// Button mapping
+		secondaryButton3.whenPressed(new EngageToteLifterStops());
+		secondaryButton5.whenPressed(new DisengageToteLifterStops());
+		
+		secondaryButton4.whenPressed(new MovePickupWheelsIn());
+		secondaryButton6.whenPressed(new MovePickupWheelsOut());
+		
+		secondaryButton7.whenPressed(new LowerTotes());
+		secondaryButton8.whenPressed(new LiftTotes());
 	}
 
 	public double getDampening()

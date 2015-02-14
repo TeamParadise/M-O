@@ -4,8 +4,6 @@
 
 package org.usfirst.frc.team1165.robot.subsystems;
 
-import org.usfirst.frc.team1165.robot.RobotMap;
-
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -19,8 +17,8 @@ public class Piston extends Subsystem
 
 	public Piston(int solenoidInPort, int solenoidOutPort)
 	{
-		this.solenoidIn = new Solenoid(RobotMap.pcmCanId, solenoidInPort);
-		this.solenoidOut = new Solenoid(RobotMap.pcmCanId, solenoidOutPort);
+		this.solenoidIn = new Solenoid(solenoidInPort);
+		this.solenoidOut = new Solenoid(solenoidOutPort);
 	}
 
 	public void extend()
