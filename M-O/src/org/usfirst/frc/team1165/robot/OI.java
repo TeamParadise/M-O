@@ -1,8 +1,10 @@
 package org.usfirst.frc.team1165.robot;
  
+import org.usfirst.frc.team1165.robot.commands.DisengageToteLifterStops;
 import org.usfirst.frc.team1165.robot.commands.DriveStraight;
 import org.usfirst.frc.team1165.robot.commands.DriveStraightDistance;
 import org.usfirst.frc.team1165.robot.commands.DriveToObject;
+import org.usfirst.frc.team1165.robot.commands.EngageToteLifterStops;
 import org.usfirst.frc.team1165.robot.commands.PickupWheelsSpinIn;
 import org.usfirst.frc.team1165.robot.commands.PickupWheelsSpinLeft;
 import org.usfirst.frc.team1165.robot.commands.PickupWheelsSpinOut;
@@ -60,6 +62,8 @@ public class OI
 		SmartDashboard.putData(new LowerTotes());
 		SmartDashboard.putData(new MovePickupWheelsIn());
 		SmartDashboard.putData(new MovePickupWheelsOut());
+		SmartDashboard.putData(new EngageToteLifterStops());
+		SmartDashboard.putData(new DisengageToteLifterStops());
 
 		SmartDashboard.putData(new ResetGyro());
 		SmartDashboard.putData(new ResetEncoder());
