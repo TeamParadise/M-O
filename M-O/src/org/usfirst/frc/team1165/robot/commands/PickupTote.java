@@ -16,8 +16,6 @@ public class PickupTote extends CommandGroup
 {
 	public PickupTote()
 	{
-		addSequential(new SetDefaultRobotPositions());
-		//Drive to tote
 		addSequential(new MovePickupWheelsIn());
 		addSequential(new CaptureTote());
 		addSequential(new LowerTotes());

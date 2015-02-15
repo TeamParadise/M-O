@@ -21,6 +21,14 @@ public class DriveStraight extends Command
 		this.forwardSpeedKey = forwardSpeedKey;
 	}
 
+	public DriveStraight(double forwardSpeed, double timeout) 
+	{
+		super(timeout);
+		requires(Robot.driveTrain);
+		this.forwardSpeed = forwardSpeed;
+		forwardSpeedKey = null;
+	}
+
 	protected void initialize()
 	{
 		if (null != forwardSpeedKey)
