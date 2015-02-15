@@ -9,19 +9,20 @@ public class RunAutonomous extends CommandGroup
 	{
 		addSequential(new SetDefaultRobotPositions());
 		//addSequential(new PickUpTote());
-		addSequential(new RotateToHeading(.6, 15, -45, 0.2));
-		addSequential(new DriveStraightDistance(-1, 53));
-		addSequential(new RotateToHeading(.6, 30, 75, 0.2));
-		addSequential(new DriveStraightDistance(-1, 65));
+		addSequential(new DriveStraightDistance(-1, 10),1);
+		addSequential(new RotateToHeading(.6, 15, -45, 0.2),1);
+		addSequential(new DriveStraightDistance(-1, 53),1);
+		addSequential(new RotateToHeading(.6, 30, 75, 0.2),1);
+		addSequential(new DriveStraightDistance(-1, 65),1);
 		//addSequential(new PickUpTote());
 
-		addSequential(new RotateToHeading(.6, 15, 45, 0.2));
-		addSequential(new DriveStraightDistance(-1, 53));
-		addSequential(new RotateToHeading(.6, 30, -75, 0.2));
-		addSequential(new DriveStraightDistance(-1, 65));
+		addSequential(new RotateToHeading(.6, 15, 45, 0.2),1);
+		addSequential(new DriveStraightDistance(-1, 53),1);
+		addSequential(new RotateToHeading(.6, 30, -75, 0.2),1);
+		addSequential(new DriveStraightDistance(-1, 65),1);
 		//addSequential(new PickUpTote());
 		
-		addSequential(new RotateToHeading(.6, 30, -75, 0.2));
-		addSequential(new DriveStraightDistanceWithTcas(-0.4, 125, 60, 30));
+		addSequential(new RotateToHeading(.6, 30, -75, 0.2),1);
+		addSequential(new DriveStraightDistanceWithTcas(-0.4, 125, 60, 30),1);
 	}
 }

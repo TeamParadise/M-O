@@ -55,9 +55,9 @@ public class OI
 		// Smart dashbaord numbers
 		SmartDashboard.putNumber("Dampening", .9);
 	
-		SmartDashboard.putNumber("Forward Speed", -1);
+		SmartDashboard.putNumber("Forward Speed", -0.3);
 
-		SmartDashboard.putNumber("Drive Inches", 53);
+		SmartDashboard.putNumber("Drive Inches", 10);
 
 		SmartDashboard.putNumber("Target Range", 19);
 		SmartDashboard.putNumber("Brake Range", 50);
@@ -70,7 +70,7 @@ public class OI
 		
 		// Smart dashboard buttons
 		SmartDashboard.putData(new DriveStraightDistance("Forward Speed", "Drive Inches"));
-		SmartDashboard.putData(new DriveStraightDistance("Forward Speed", "Drive Inches"));
+		//SmartDashboard.putData(new DriveStraightDistance("Forward Speed", "Drive Inches"));
 		SmartDashboard.putData(new DriveToObject("Forward Speed", "Brake Range", "Target Range", "Creep Speed"));
 		SmartDashboard.putData(new RotateToHeading("Rotate Magnitude", "Brake Heading", "Target Heading",
 				"Creep Magnitude"));
