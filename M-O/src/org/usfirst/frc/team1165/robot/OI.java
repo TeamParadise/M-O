@@ -111,7 +111,8 @@ public class OI
 		secondaryButton8.whenPressed(new LiftTotes());
 		secondaryButton9.whenPressed(new ExcreteOnScoringPlatform());
 		secondaryButton10.whenPressed(new ExcreteOnStep());
-		secondaryButton12.whenPressed(new PickupTote());
+		secondaryButton11.whenPressed(new ExcreteOnScoringPlatform());
+		secondaryButton1.whenPressed(new PickupTote());
 	}
 
 	public double getDampening()

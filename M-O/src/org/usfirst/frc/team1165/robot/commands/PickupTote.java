@@ -1,5 +1,6 @@
 package org.usfirst.frc.team1165.robot.commands;
 
+import org.usfirst.frc.team1165.robot.RobotMap;
 import org.usfirst.frc.team1165.robot.commands.piston.LiftTotes;
 import org.usfirst.frc.team1165.robot.commands.piston.LowerTotes;
 import org.usfirst.frc.team1165.robot.commands.piston.MovePickupWheelsIn;
@@ -20,7 +21,7 @@ public class PickupTote extends CommandGroup
 		addSequential(new MovePickupWheelsIn());
 		addSequential(new CaptureTote());
 		addSequential(new LowerTotes());
-		addSequential(new WaitCommand(1));
+		addSequential(new WaitCommand(RobotMap.WAIT_BETWEEN_PNEUMATIC_ACTIONS));
 		addSequential(new MovePickupWheelsOut());
 		addSequential(new LiftTotes());
 	}

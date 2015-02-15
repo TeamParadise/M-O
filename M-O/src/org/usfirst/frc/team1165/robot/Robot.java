@@ -30,7 +30,6 @@ public class Robot extends IterativeRobot
 	public void robotInit()
 	{
 		oi = new OI();
-
 		autonomousCommand = new RunAutonomous();
 	}
 

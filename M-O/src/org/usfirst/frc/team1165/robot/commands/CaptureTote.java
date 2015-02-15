@@ -1,6 +1,7 @@
 package org.usfirst.frc.team1165.robot.commands;
 
 import org.usfirst.frc.team1165.robot.Robot;
+import org.usfirst.frc.team1165.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -18,7 +19,7 @@ public class CaptureTote extends Command
 	// Called just before this Command runs the first time
 	protected void initialize()
 	{
-		Robot.boxPickupWheels.spinIn(1.0);
+		Robot.boxPickupWheels.spinIn(RobotMap.PICKUP_WHEELS_SPEED);
 	}
 
 	// Called repeatedly when this Command is scheduled to run
@@ -29,7 +30,7 @@ public class CaptureTote extends Command
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished()
 	{
-		return Robot.rangeFinder.getRange() < 7.5;
+		return Robot.rangeFinder.getRange() < RobotMap.SONIC_TOTE_IN;
 	}
 
 	// Called once after isFinished returns true

@@ -1,5 +1,6 @@
 package org.usfirst.frc.team1165.robot.commands;
 
+import org.usfirst.frc.team1165.robot.RobotMap;
 import org.usfirst.frc.team1165.robot.commands.piston.LowerTotes;
 import org.usfirst.frc.team1165.robot.commands.piston.MovePickupWheelsIn;
 import org.usfirst.frc.team1165.robot.commands.piston.MovePickupWheelsOut;
@@ -15,16 +16,13 @@ public class ExcreteOnStep extends CommandGroup
 
 	public ExcreteOnStep()
 	{
+		//Drive to step (USER CONTROLLED)
 		addSequential(new MovePickupWheelsOut());
-		//Drive to step using range finder
 		addSequential(new EngageToteLifterStops());
 		addSequential(new LowerTotes());
-		addSequential(new WaitCommand(0.5));
+		addSequential(new WaitCommand(RobotMap.WAIT_BETWEEN_PNEUMATIC_ACTIONS));
 		addSequential(new MovePickupWheelsIn());
-		addSequential(new PickupWheelsSpinOut(1.0, 2.0)); // magnitude, seconds
-		addSequential(new WaitCommand(0.5));
-		// Back up
-		//addSequential(new DriveStraightDistance(-30));
-		//addSequential(new SetDefaultRobotPositions());
+		addSequential(new PickupWheelsSpinOut(RobotMap.PICKUP_WHEELS_SPEED, RobotMap.PICKUP_WHEELS_SPIN_OUT_TIME)); // magnitude, seconds
+		addSequential(new MovePickupWheelsOut());
 	}
 }

@@ -1,5 +1,6 @@
 package org.usfirst.frc.team1165.robot.commands;
 
+import org.usfirst.frc.team1165.robot.RobotMap;
 import org.usfirst.frc.team1165.robot.commands.piston.LowerTotes;
 import org.usfirst.frc.team1165.robot.commands.piston.MovePickupWheelsOut;
 
@@ -11,16 +12,12 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
  */
 public class ExcreteOnScoringPlatform extends CommandGroup
 {
-
 	public ExcreteOnScoringPlatform()
 	{
-		//Drive to Platform
 		addSequential(new MovePickupWheelsOut());
-		addSequential(new WaitCommand(0.5));
+		addSequential(new WaitCommand(RobotMap.WAIT_BETWEEN_PNEUMATIC_ACTIONS));
 		addSequential(new LowerTotes());
-		addSequential(new WaitCommand(1));
-		// Back up
-		//addSequential(new DriveStraightDistance(-30));
-		//addSequential(new SetDefaultRobotPositions());
+		addSequential(new WaitCommand(RobotMap.WAIT_BETWEEN_PNEUMATIC_ACTIONS));
+		addSequential(new DriveStraightDistance(-RobotMap.DRIVE_SPEED, RobotMap.ROBOT_BACKUP_FROM_SCORING_PLATFORM),2);
 	}
 }

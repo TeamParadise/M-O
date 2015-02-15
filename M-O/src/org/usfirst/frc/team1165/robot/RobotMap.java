@@ -8,6 +8,15 @@ package org.usfirst.frc.team1165.robot;
  */
 public class RobotMap
 {
+    public static final double SONIC_TOTE_IN = 7.5;
+    public static final double DRIVE_SPEED = 1;
+    public static final double ROTATE_SPEED = 0.6;
+    public static final double ROTATE_CREEP_SPEED = 0.6;
+    public static final double SONIC_AT_STEP = 33.0;
+    public static final double PICKUP_WHEELS_SPEED = 1;
+    public static final double PICKUP_WHEELS_SPIN_OUT_TIME = 2;
+    public static final double ROBOT_BACKUP_FROM_SCORING_PLATFORM = 30.0;    
+    public static final double WAIT_BETWEEN_PNEUMATIC_ACTIONS = 0.5;    
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
     // public static int leftMotor = 1;
