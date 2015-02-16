@@ -1,6 +1,7 @@
 package org.usfirst.frc.team1165.robot;
  
 import org.usfirst.frc.team1165.robot.commands.DisengageToteLifterStops;
+import org.usfirst.frc.team1165.robot.commands.DriveHalfCircle;
 import org.usfirst.frc.team1165.robot.commands.DriveStraight;
 import org.usfirst.frc.team1165.robot.commands.DriveStraightDistance;
 import org.usfirst.frc.team1165.robot.commands.DriveToObject;
@@ -72,6 +73,7 @@ public class OI
 		SmartDashboard.putData(new DriveStraightDistance("Forward Speed", "Drive Inches"));
 		SmartDashboard.putData(new DriveStraight("Forward Speed", 1));
 		SmartDashboard.putData(new DriveToObject("Forward Speed", "Brake Range", "Target Range", "Creep Speed"));
+		SmartDashboard.putData(new DriveHalfCircle("Forward Speed", "Drive Inches"));
 		SmartDashboard.putData(new RotateToHeading("Rotate Magnitude", "Brake Heading", "Target Heading",
 				"Creep Magnitude"));
 
