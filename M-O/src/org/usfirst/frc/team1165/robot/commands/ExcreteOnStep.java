@@ -17,7 +17,7 @@ public class ExcreteOnStep extends CommandGroup
 	public ExcreteOnStep()
 	{
 		//Drive to step (USER CONTROLLED)
-		addSequential(new DriveToObject(RobotMap.DRIVE_SPEED/2,40,20,RobotMap.DRIVE_SPEED/4,1000));
+		//addSequential(new DriveToObject(RobotMap.DRIVE_SPEED/2,40,20,RobotMap.DRIVE_SPEED/4,1000));
 		addSequential(new MovePickupWheelsOut());
 		addSequential(new EngageToteLifterStops());
 		addSequential(new LowerTotes());
