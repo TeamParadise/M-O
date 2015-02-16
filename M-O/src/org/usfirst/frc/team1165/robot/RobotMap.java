@@ -16,7 +16,7 @@ public class RobotMap
     public static final double ROTATE_CREEP_SPEED 					=   0.2;  // Rotate magnitude
     public static final double PICKUP_WHEELS_SPEED 					=   1;    // Wheel magitude
     public static final double PICKUP_WHEELS_SPIN_OUT_TIME 			=   2;    // Seconds
-    public static final double ROBOT_BACKUP_FROM_SCORING_PLATFORM 	=  30;    // Inches
+    public static final double ROBOT_BACKUP_FROM_SCORING_PLATFORM 	=  33;    // Inches
     public static final double WAIT_BETWEEN_PNEUMATIC_ACTIONS 		=   0.5;  // Seconds 
     public static final double DISTANCE_TO_AUTO_ZONE 				= 125;    // Inches
     public static final double TCAS_DISTANCE 						=  60;    // Inches
