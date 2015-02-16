@@ -16,8 +16,9 @@ public class PickupTote extends CommandGroup
 {
 	public PickupTote()
 	{
+		addSequential(new DisengageToteLifterStops());
 		addSequential(new MovePickupWheelsIn());
-		addSequential(new CaptureTote());
+		addSequential(new CaptureTote(),1.25);
 		addSequential(new LowerTotes());
 		addSequential(new WaitCommand(RobotMap.WAIT_BETWEEN_PNEUMATIC_ACTIONS));
 		addSequential(new MovePickupWheelsOut());

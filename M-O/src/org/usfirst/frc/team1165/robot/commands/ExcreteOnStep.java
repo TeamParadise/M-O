@@ -17,12 +17,13 @@ public class ExcreteOnStep extends CommandGroup
 	public ExcreteOnStep()
 	{
 		//Drive to step (USER CONTROLLED)
+		addSequential(new DriveToObject(RobotMap.DRIVE_SPEED/2,40,20,RobotMap.DRIVE_SPEED/4,1000));
 		addSequential(new MovePickupWheelsOut());
 		addSequential(new EngageToteLifterStops());
 		addSequential(new LowerTotes());
 		addSequential(new WaitCommand(RobotMap.WAIT_BETWEEN_PNEUMATIC_ACTIONS));
 		addSequential(new MovePickupWheelsIn());
 		addSequential(new PickupWheelsSpinOut(RobotMap.PICKUP_WHEELS_SPEED, RobotMap.PICKUP_WHEELS_SPIN_OUT_TIME)); // magnitude, seconds
-		addSequential(new MovePickupWheelsOut());
+		addSequential(new SetDefaultRobotPositions());
 	}
 }

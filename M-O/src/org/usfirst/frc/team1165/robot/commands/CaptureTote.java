@@ -11,6 +11,8 @@ import edu.wpi.first.wpilibj.command.Command;
 public class CaptureTote extends Command
 {
 
+	private boolean useSonar;
+	
 	public CaptureTote()
 	{
 		requires(Robot.boxPickupWheels);
@@ -20,6 +22,7 @@ public class CaptureTote extends Command
 	protected void initialize()
 	{
 		Robot.boxPickupWheels.spinIn(RobotMap.PICKUP_WHEELS_SPEED);
+		useSonar = Robot.rangeFinder.getRange() > 6 && Robot.rangeFinder.getRange() < 30;
 	}
 
 	// Called repeatedly when this Command is scheduled to run
@@ -30,7 +33,7 @@ public class CaptureTote extends Command
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished()
 	{
-		return Robot.rangeFinder.getRange() < RobotMap.SONIC_TOTE_IN;
+		return useSonar && Robot.rangeFinder.getRange() < RobotMap.SONIC_TOTE_IN;
 	}
 
 	// Called once after isFinished returns true

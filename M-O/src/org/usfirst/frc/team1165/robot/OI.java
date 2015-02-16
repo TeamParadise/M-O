@@ -109,7 +109,7 @@ public class OI
 		
 		secondaryButton7.whenPressed(new LowerTotes());
 		secondaryButton8.whenPressed(new LiftTotes());
-		secondaryButton9.whenPressed(new ExcreteOnScoringPlatform());
+		//secondaryButton9.whenPressed(new ExcreteOnScoringPlatform());
 		secondaryButton10.whenPressed(new ExcreteOnStep());
 		secondaryButton11.whenPressed(new ExcreteOnScoringPlatform());
 		secondaryButton1.whenPressed(new PickupTote());
