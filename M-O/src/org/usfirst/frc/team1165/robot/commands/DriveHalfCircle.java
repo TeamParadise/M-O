@@ -8,28 +8,20 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class DriveHalfCircle extends Command
 {
 	private String forwardSpeedKey;
-	private String driveInchesKey;
 	//private String twistCorrectionKey;
 
 	private double forwardSpeed;
-	private double driveInches;
-	//private double twistCorrection;
-	private double startHeading;
 	
-	public DriveHalfCircle(String forwardSpeedKey, String driveInchesKey) 
+	public DriveHalfCircle(String forwardSpeedKey) 
 	{
 		requires(Robot.driveTrain);
 		this.forwardSpeedKey = forwardSpeedKey;
-		this.driveInchesKey = driveInchesKey;
-		//this.twistCorrectionKey = twistCorrectionKey;
 	}
 
-	public DriveHalfCircle(double forwardSpeed, double driveInches) 
+	public DriveHalfCircle(double forwardSpeed) 
 	{
 		requires(Robot.driveTrain);
 		this.forwardSpeed = forwardSpeed;
-		this.driveInches = Math.PI*driveInches/2; // Half a circle of diameter driveInches
-		//this.twistCorrection = twistCorrection;
 		forwardSpeedKey = null;
 	}
 
@@ -38,10 +30,7 @@ public class DriveHalfCircle extends Command
 		if (null != forwardSpeedKey)
 		{
 			forwardSpeed = SmartDashboard.getNumber(forwardSpeedKey);
-			driveInches = SmartDashboard.getNumber(driveInchesKey);
 		}
-		Robot.quadEncoder.reset();
-		startHeading = Robot.gyroscope.getHeading();
 	}
 
 	protected void execute()
@@ -53,8 +42,7 @@ public class DriveHalfCircle extends Command
  
 	protected boolean isFinished()
 	{
-		return Robot.gyroscope.getHeading() > 0;
-		// return Math.abs(Robot.quadEncoder.getInches()) > driveInches;
+		return Robot.gyroscope.getHeading() <= 1; // Is one degree close enough???
 	}
 
 	protected void end()

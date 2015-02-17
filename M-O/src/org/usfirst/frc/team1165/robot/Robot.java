@@ -4,8 +4,11 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-import org.usfirst.frc.team1165.robot.commands.RunAutonomous;
+import org.usfirst.frc.team1165.robot.commands.RunAutonomous0;
+import org.usfirst.frc.team1165.robot.commands.RunAutonomous1;
 import org.usfirst.frc.team1165.robot.subsystems.BoxPickupWheels;
 import org.usfirst.frc.team1165.robot.subsystems.Camera;
 import org.usfirst.frc.team1165.robot.subsystems.DriveTrain;
@@ -25,12 +28,16 @@ public class Robot extends IterativeRobot
 	public static final ToteLifterStops toteLifterStops = new ToteLifterStops();
 	public static OI oi;
 	
+	SendableChooser autoChooser;
 	Command autonomousCommand;
-
+	
 	public void robotInit()
 	{
 		oi = new OI();
-		autonomousCommand = new RunAutonomous();
+		autoChooser = new SendableChooser();
+		autoChooser.addDefault("Autonomous 0", new RunAutonomous0());
+		autoChooser.addObject("Autonomous 1", new RunAutonomous1());
+		SmartDashboard.putData("Auto:", autoChooser);
 	}
 
 	public void disabledPeriodic()
@@ -40,10 +47,8 @@ public class Robot extends IterativeRobot
 
 	public void autonomousInit()
 	{
-		if (autonomousCommand != null)
-		{
-			autonomousCommand.start();
-		}
+		autonomousCommand = (Command) autoChooser.getSelected();
+		autonomousCommand.start();
 	}
 
 	public void autonomousPeriodic()
@@ -65,7 +70,6 @@ public class Robot extends IterativeRobot
 
 	public void disabledInit()
 	{
-
 	}
 
 	public void teleopPeriodic()

@@ -4,11 +4,12 @@ import org.usfirst.frc.team1165.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
-public class RunAutonomous extends CommandGroup
+public class RunAutonomous0 extends CommandGroup
 {
 
-	public RunAutonomous()
+	public RunAutonomous0()
 	{
+		
 		addSequential(new SetDefaultRobotPositions()); 
 		
 		addSequential(new PickupTote(), 3);
@@ -31,5 +32,6 @@ public class RunAutonomous extends CommandGroup
 		
 		addSequential(new RotateToHeading(RobotMap.ROTATE_SPEED, 25, -75, RobotMap.ROTATE_CREEP_SPEED), 1);
 		addSequential(new DriveStraightDistanceWithTcas(RobotMap.DRIVE_SPEED, RobotMap.DISTANCE_TO_AUTO_ZONE, RobotMap.TCAS_DISTANCE, 30), 1);
+
 	}
 }

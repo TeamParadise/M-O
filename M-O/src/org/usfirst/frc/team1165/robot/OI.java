@@ -73,9 +73,8 @@ public class OI
 		SmartDashboard.putData(new DriveStraightDistance("Forward Speed", "Drive Inches"));
 		SmartDashboard.putData(new DriveStraight("Forward Speed", 1));
 		SmartDashboard.putData(new DriveToObject("Forward Speed", "Brake Range", "Target Range", "Creep Speed"));
-		SmartDashboard.putData(new DriveHalfCircle("Forward Speed", "Drive Inches"));
-		SmartDashboard.putData(new RotateToHeading("Rotate Magnitude", "Brake Heading", "Target Heading",
-				"Creep Magnitude"));
+		SmartDashboard.putData(new DriveHalfCircle("Forward Speed"));
+		SmartDashboard.putData(new RotateToHeading("Rotate Magnitude", "Brake Heading", "Target Heading", "Creep Magnitude"));
 
 		SmartDashboard.putData(new PickupWheelsStop());
 		SmartDashboard.putData(new PickupWheelsSpinIn());
@@ -101,6 +100,8 @@ public class OI
 		SmartDashboard.putData(new ResetEncoder());
 		
 		// Joystick button mapping
+		secondaryButton1.whenPressed(new PickupTote());
+
 		secondaryButton2.whenPressed(new TogglePickupWheels(secondaryButton2));
 		
 		secondaryButton3.whenPressed(new EngageToteLifterStops());
@@ -111,10 +112,9 @@ public class OI
 		
 		secondaryButton7.whenPressed(new LowerTotes());
 		secondaryButton8.whenPressed(new LiftTotes());
-		//secondaryButton9.whenPressed(new ExcreteOnScoringPlatform());
+
 		secondaryButton10.whenPressed(new ExcreteOnStep());
 		secondaryButton11.whenPressed(new ExcreteOnScoringPlatform());
-		secondaryButton1.whenPressed(new PickupTote());
 	}
 
 	public double getDampening()
