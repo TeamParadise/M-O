@@ -14,10 +14,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class QuadEncoder extends Subsystem {
 	
 	private Encoder encoder;
+	double distancePerTick = Math.PI/12;
     
 	public QuadEncoder()
 	{
-		encoder = new Encoder(RobotMap.encoderChannelA, RobotMap.encoderChannelB, true, EncodingType.k4X );
+		encoder = new Encoder(RobotMap.encoderChannelA, RobotMap.encoderChannelB, false, EncodingType.k4X );
 		reset();
 	}
 
@@ -28,26 +29,24 @@ public class QuadEncoder extends Subsystem {
     
     public void report()
     {
-    	double distancePerTick = 6*Math.PI/280;
     	SmartDashboard.putNumber("Encoder Distance", getInches());
     	SmartDashboard.putNumber("Encoder Ticks", encoder.get());
     }
     
     public double getInches()
     {
-    	double distancePerTick = 6*Math.PI/280;
     	return distancePerTick*getTicks();
     }
     
     public double getStrafeInches() 
     {
-    	double strafePerTick = 6*Math.PI/280/3;
+    	double strafePerTick = distancePerTick/3;
     	return strafePerTick*getTicks();
     }
     
     public double getTicks() 
     {
-    	return encoder.getDistance();
+    	return encoder.get();
     }
     
     public void reset()

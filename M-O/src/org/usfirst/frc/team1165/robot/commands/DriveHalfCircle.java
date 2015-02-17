@@ -8,6 +8,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class DriveHalfCircle extends Command
 {
 	private String forwardSpeedKey;
+	private double currentHeading;
+	private double originalHeading;
 	//private String twistCorrectionKey;
 
 	private double forwardSpeed;
@@ -27,7 +29,8 @@ public class DriveHalfCircle extends Command
 
 	protected void initialize()
 	{
-		if (null != forwardSpeedKey)
+		originalHeading = Robot.gyroscope.getHeading();
+		if (null  != forwardSpeedKey)
 		{
 			forwardSpeed = SmartDashboard.getNumber(forwardSpeedKey);
 		}
@@ -35,14 +38,16 @@ public class DriveHalfCircle extends Command
 
 	protected void execute()
 	{
-		double twistCorrection = Robot.gyroscope.getTwistCorrection();
-		
+		double twistCorrection = 0.275;
+		SmartDashboard.putNumber("TwistCorrection", twistCorrection);
 		Robot.driveTrain.driveCartesian(forwardSpeed, 0, twistCorrection, 0);
 	}
  
 	protected boolean isFinished()
 	{
-		return Math.abs(Robot.gyroscope.getHeading()) <= 1; // Is one degree close enough???
+		// Is one degree close enough???
+		currentHeading = Robot.gyroscope.getHeading();
+		return Math.abs(currentHeading) <= 1 && Math.abs(currentHeading) >= 1 ;
 	}
 
 	protected void end()
