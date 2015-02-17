@@ -42,7 +42,7 @@ public class DriveHalfCircle extends Command
  
 	protected boolean isFinished()
 	{
-		return Robot.gyroscope.getHeading() <= 1; // Is one degree close enough???
+		return Math.abs(Robot.gyroscope.getHeading()) <= 1; // Is one degree close enough???
 	}
 
 	protected void end()
