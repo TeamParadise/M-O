@@ -14,7 +14,6 @@ public class Gyroscope extends Subsystem
 	final double smallTwistPower = 0.1;
 	final double smallAngle = 1;
 	final double bigAngle = 2;
-	private double angle;
 
 	public Gyroscope()
 	{
@@ -35,17 +34,17 @@ public class Gyroscope extends Subsystem
 
 	public double getTwistCorrection()
 	{
-		angle = getHeading();
+		double angle = getHeading();
 
-		if (angle > bigAngle)
+		if (Math.abs(angle) > bigAngle)
 		{
-			return angle > 0 ? twistPower : -twistPower;
+			return angle > 0 ? -twistPower : twistPower;
 		}
-		if (angle < smallAngle)
+		if (Math.abs(angle) < smallAngle)
 		{
 			return 0;
 		}
-		return angle > 0 ? smallTwistPower : -smallTwistPower;
+		return angle > 0 ? -smallTwistPower : smallTwistPower;
 	}
 
 	public void reset()
