@@ -77,7 +77,7 @@ public class OI
 		SmartDashboard.putData(new RotateToHeading("Rotate Magnitude", "Brake Heading", "Target Heading", "Creep Magnitude"));
 
 		SmartDashboard.putData(new PickupWheelsStop());
-		SmartDashboard.putData(new PickupWheelsSpinIn());
+		SmartDashboard.putData(new PickupWheelsSpinIn(RobotMap.PICKUP_WHEELS_SPEED,0.2));
 		SmartDashboard.putData(new PickupWheelsSpinOut());
 		SmartDashboard.putData(new PickupWheelsSpinRight());
 		SmartDashboard.putData(new PickupWheelsSpinLeft());
