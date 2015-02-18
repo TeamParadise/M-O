@@ -15,13 +15,21 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  *
  */
-public class Camera extends Subsystem
+public class Camera extends Subsystem implements Runnable
 {
-	int session;
-	Image frame;
+	public enum CameraMode { SUBSYSTEM, RUNNABLE };
 
-	public Camera()
+	private int session;
+	private Image frame;
+	private CameraMode mode;
+	
+	/**
+	 * 
+	 * @param mode Indicates if should run Camera as a SUBSYSTEM or a RUNNABLE
+	 */
+	public Camera(CameraMode mode)
 	{
+		this.mode = mode;
 		frame = NIVision.imaqCreateImage(NIVision.ImageType.IMAGE_RGB, 0);
 		session = NIVision.IMAQdxOpenCamera(RobotMap.cameraName,
 				NIVision.IMAQdxCameraControlMode.CameraControlModeController);
@@ -51,11 +59,19 @@ public class Camera extends Subsystem
 		NIVision.IMAQdxConfigureGrab(session);
 		NIVision.IMAQdxStartAcquisition(session);
 		CameraServer.getInstance().setQuality(50);
+		
+		if (mode == CameraMode.RUNNABLE)
+		{
+			new Thread(this).start();
+		}
 	}
 
 	public void initDefaultCommand()
 	{
-		setDefaultCommand(new ProcessCameraFrames(this));
+		if (mode == CameraMode.SUBSYSTEM)
+		{
+			setDefaultCommand(new ProcessCameraFrames(this));
+		}
 	}
 
 	public void processFrame()
@@ -63,5 +79,21 @@ public class Camera extends Subsystem
 		NIVision.IMAQdxGrab(session, frame, 1);
 		//NIVision.imaqSetImageSize(frame, 320, 240);
 		CameraServer.getInstance().setImage(frame);
+	}
+	
+	@Override
+	public void run()
+	{
+		while (true)
+		{
+			processFrame();
+			try
+			{
+				Thread.sleep(20);
+			}
+			catch (InterruptedException e)
+			{
+			}
+		}
 	}
 }
