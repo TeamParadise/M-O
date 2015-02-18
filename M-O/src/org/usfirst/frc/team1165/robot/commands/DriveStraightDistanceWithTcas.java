@@ -49,7 +49,7 @@ public class DriveStraightDistanceWithTcas extends Command
 	{
 		double twistCorrection = Robot.gyroscope.getTwistCorrection();
 		double speed;
-		if (Robot.rangeFinder.getRange() < tcas) 
+		if (Robot.rangeFinder.getRange() < tcas && Robot.rangeFinder.getRange() > 30) 
 		{ 
 			twistCorrection = -0.40;
 			if (!didWeAvoidOneThing)
@@ -58,7 +58,7 @@ public class DriveStraightDistanceWithTcas extends Command
 				driveInches *= 1.1;
 			}
 		}
-		if (Robot.rangeFinder.getRange() < sitAndSpin)
+		if (Robot.rangeFinder.getRange() < sitAndSpin && Robot.rangeFinder.getRange() > 30)
 		{
 			speed = 0;//-forwardSpeed *0.5;
 			twistCorrection = -0.3;

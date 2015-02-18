@@ -23,7 +23,7 @@ public class ExcreteOnStep extends CommandGroup
 		addSequential(new LowerTotes());
 		addSequential(new WaitCommand(RobotMap.WAIT_BETWEEN_PNEUMATIC_ACTIONS));
 		addSequential(new MovePickupWheelsIn());
-		addSequential(new PickupWheelsSpinOut(RobotMap.PICKUP_WHEELS_SPEED, RobotMap.PICKUP_WHEELS_SPIN_OUT_TIME)); // magnitude, seconds
+		addSequential(new PickupWheelsSpinOut(RobotMap.PICKUP_WHEELS_SPEED, RobotMap.PICKUP_WHEELS_SPIN_OUT_TIME, true)); // magnitude, seconds
 		addSequential(new SetDefaultRobotPositions());
 	}
 }

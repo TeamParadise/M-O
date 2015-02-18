@@ -1,6 +1,7 @@
 package org.usfirst.frc.team1165.robot.commands;
 
 import org.usfirst.frc.team1165.robot.Robot;
+import org.usfirst.frc.team1165.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -9,22 +10,30 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class PickupWheelsSpinRight extends Command
 {
+	private double magnitude = RobotMap.PICKUP_WHEELS_SPEED;
+	private boolean idle = true;
 
 	public PickupWheelsSpinRight()
 	{
 		requires(Robot.boxPickupWheels);
 	}
 
-	// Called just before this Command runs the first time
+	public PickupWheelsSpinRight(double magnitude, double timeout, boolean idle)
+	{
+		requires(Robot.boxPickupWheels);
+		this.magnitude = magnitude;
+		this.idle = idle;
+		setTimeout(timeout);
+	}
+
 	protected void initialize()
 	{
-		Robot.boxPickupWheels.idle();
 	}
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
 	{
-		Robot.boxPickupWheels.spinRight(0.5);
+		Robot.boxPickupWheels.spinRight(magnitude);
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
@@ -36,7 +45,10 @@ public class PickupWheelsSpinRight extends Command
 	// Called once after isFinished returns true
 	protected void end()
 	{
-		Robot.boxPickupWheels.idle();
+		if(idle)
+		{
+			Robot.boxPickupWheels.idle();
+		}
 	}
 
 	// Called when another command which requires one or more of the same

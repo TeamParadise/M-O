@@ -15,15 +15,21 @@ public class RunAutonomous1 extends CommandGroup
 	public RunAutonomous1()
 	{
 		addSequential(new PickupTote());
-		addSequential(new WaitCommand(0.7));
-		addSequential(new RotateToHeading(RobotMap.ROTATE_SPEED, 15, -45, RobotMap.ROTATE_CREEP_SPEED), 1);
+		addSequential(new WaitCommand(RobotMap.WAIT_BETWEEN_PNEUMATIC_ACTIONS));
+		addSequential(new RotateToHeading(RobotMap.ROTATE_SPEED, 20, -40, 0.25));
 		addSequential(new MovePickupWheelsIn());
-		addSequential(new DriveStraightDistance(RobotMap.DRIVE_SPEED, 20 ));
-		addSequential(new RotateToHeading(RobotMap.ROTATE_SPEED, 15, 60, RobotMap.ROTATE_CREEP_SPEED), 1);
-		addParallel(new PickupWheelsSpinIn(RobotMap.PICKUP_WHEELS_SPEED,0.2));
+		//addSequential(new WaitCommand(RobotMap.WAIT_FOR_SUBSYSTEM_TO_COMPLETE));
+		//addSequential(new DriveStraightDistance(RobotMap.DRIVE_START_SPEED, 2 ));
+		addSequential(new WaitCommand(RobotMap.WAIT_FOR_SUBSYSTEM_TO_COMPLETE));
+		addSequential(new DriveStraightDistance(RobotMap.DRIVE_SPEED, 15 ));
+		addSequential(new RotateToHeading(RobotMap.ROTATE_SPEED, 20, 60, 0.25));
 		addSequential(new MovePickupWheelsOut());
-		addSequential(new DriveStraightDistance(RobotMap.DRIVE_SPEED , 52));
-		addSequential(new WaitCommand(0.5));
+		//addSequential(new WaitCommand(RobotMap.WAIT_FOR_SUBSYSTEM_TO_COMPLETE));
+		//addSequential(new DriveStraightDistance(RobotMap.DRIVE_START_SPEED, 2 ));
+		addSequential(new WaitCommand(RobotMap.WAIT_FOR_SUBSYSTEM_TO_COMPLETE));
+		addSequential(new DriveStraightDistance(RobotMap.DRIVE_SPEED , 20));
+		addParallel(new PickupWheelsSpinIn(RobotMap.PICKUP_WHEELS_SPEED, 1, false));
+		addSequential(new WaitCommand(0.2));
 		addSequential(new PickupTote());
 	}
 }

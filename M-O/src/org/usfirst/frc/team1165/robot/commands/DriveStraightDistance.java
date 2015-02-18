@@ -1,6 +1,7 @@
 package org.usfirst.frc.team1165.robot.commands;
 
 import org.usfirst.frc.team1165.robot.Robot;
+import org.usfirst.frc.team1165.robot.subsystems.Gyroscope;
 
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -10,35 +11,27 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class DriveStraightDistance extends Command
 {
-	private String forwardSpeedKey;
-	private String driveInchesKey;
-
 	private double forwardSpeed;
 	private double driveInches;
 	
 	public DriveStraightDistance(String forwardSpeedKey, String driveInchesKey) 
 	{
 		requires(Robot.driveTrain);
-		this.forwardSpeedKey = forwardSpeedKey;
-		this.driveInchesKey = driveInchesKey;
+		requires(Robot.gyroscope);
+		forwardSpeed = SmartDashboard.getNumber(forwardSpeedKey);
+		driveInches = SmartDashboard.getNumber(driveInchesKey);
 	}
 
 	public DriveStraightDistance(double forwardSpeed, double driveInches) 
 	{
 		requires(Robot.driveTrain);
+		requires(Robot.gyroscope);
 		this.forwardSpeed = forwardSpeed;
 		this.driveInches = driveInches;
-		forwardSpeedKey = null;
 	}
 
 	protected void initialize()
 	{
-		if (null != forwardSpeedKey)
-		{
-			forwardSpeed = SmartDashboard.getNumber(forwardSpeedKey);
-			driveInches = SmartDashboard.getNumber(driveInchesKey);
-		}
-		
 		Robot.gyroscope.reset();
 		Robot.quadEncoder.reset();
 	}
