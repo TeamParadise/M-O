@@ -14,7 +14,7 @@ public class RobotMap
     public static final double DRIVE_SPEED 							=   1;    // Drive magnitude
     public static final double ROTATE_SPEED 						=   0.4;  // Rotate magnitude
     public static final double ROTATE_CREEP_SPEED 					=   0.2;  // Rotate magnitude
-    public static final double PICKUP_WHEELS_SPEED 					=   1;    // Wheel magitude
+    public static final double PICKUP_WHEELS_SPEED 					=   0.8;    // Wheel magitude
     public static final double PICKUP_WHEELS_SPIN_OUT_TIME 			=   2;    // Seconds
     public static final double ROBOT_BACKUP_FROM_SCORING_PLATFORM 	=  31;    // Inches
     public static final double WAIT_BETWEEN_PNEUMATIC_ACTIONS 		=   0.5;  // Seconds 

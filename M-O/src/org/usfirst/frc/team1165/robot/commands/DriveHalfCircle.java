@@ -38,16 +38,16 @@ public class DriveHalfCircle extends Command
 
 	protected void execute()
 	{
-		double twistCorrection = 0.275;
+		double twistCorrection = 0.165;
 		SmartDashboard.putNumber("TwistCorrection", twistCorrection);
-		Robot.driveTrain.driveCartesian(forwardSpeed, 0, twistCorrection, 0);
+		Robot.driveTrain.driveCartesian(forwardSpeed , 0, twistCorrection, 0);
 	}
  
 	protected boolean isFinished()
 	{
 		// Is one degree close enough???
 		currentHeading = Robot.gyroscope.getHeading();
-		return Math.abs(currentHeading) <= 1 && Math.abs(currentHeading) >= 1 ;
+		return currentHeading >= 45 ;
 	}
 
 	protected void end()

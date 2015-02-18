@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class QuadEncoder extends Subsystem {
 	
 	private Encoder encoder;
-	double distancePerTick = Math.PI/12;
+	double distancePerTick = 6*Math.PI/7; //wheel diameter * pi / ticks per revolution
     
 	public QuadEncoder()
 	{
