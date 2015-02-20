@@ -25,7 +25,7 @@ public class Robot extends IterativeRobot
 	public static final Gyroscope gyroscope = new Gyroscope();
 	public static final QuadEncoder quadEncoder = new QuadEncoder();
 	public static final BoxPickupWheels boxPickupWheels = new BoxPickupWheels();
-	public static final Camera camera = new Camera(CameraMode.RUNNABLE);
+	public static final Camera camera = new Camera(CameraMode.THREAD);
 	public static final ToteLifterStops toteLifterStops = new ToteLifterStops();
 	public static OI oi;
 	

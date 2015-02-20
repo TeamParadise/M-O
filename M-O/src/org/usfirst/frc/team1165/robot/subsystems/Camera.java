@@ -17,7 +17,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Camera extends Subsystem implements Runnable
 {
-	public enum CameraMode { SUBSYSTEM, RUNNABLE };
+	public enum CameraMode { SUBSYSTEM, THREAD };
 
 	private int session;
 	private Image frame;
@@ -60,7 +60,7 @@ public class Camera extends Subsystem implements Runnable
 		NIVision.IMAQdxStartAcquisition(session);
 		CameraServer.getInstance().setQuality(50);
 		
-		if (mode == CameraMode.RUNNABLE)
+		if (mode == CameraMode.THREAD)
 		{
 			new Thread(this).start();
 		}
