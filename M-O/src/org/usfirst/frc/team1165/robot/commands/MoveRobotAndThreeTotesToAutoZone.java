@@ -9,10 +9,10 @@ import org.usfirst.frc.team1165.robot.commands.piston.MovePickupWheelsOut;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.WaitCommand;
 
-public class PickupThreeTotesAndMoveToAutoZone extends CommandGroup
+public class MoveRobotAndThreeTotesToAutoZone extends CommandGroup
 {
 
-	public PickupThreeTotesAndMoveToAutoZone()
+	public MoveRobotAndThreeTotesToAutoZone()
 	{
 		addSequential(new PickupTote());
 		addSequential(new WaitCommand(RobotMap.WAIT_BETWEEN_PNEUMATIC_ACTIONS));

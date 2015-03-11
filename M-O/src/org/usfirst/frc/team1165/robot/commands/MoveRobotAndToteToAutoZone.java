@@ -5,10 +5,10 @@ import org.usfirst.frc.team1165.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.WaitCommand;
 
-public class PickUpToteAndMoveToAutoZone extends CommandGroup
+public class MoveRobotAndToteToAutoZone extends CommandGroup
 {
 
-	public PickUpToteAndMoveToAutoZone()
+	public MoveRobotAndToteToAutoZone()
 	{
 		addSequential(new PickupTote());
 		addSequential(new WaitCommand(0.8));
