@@ -9,23 +9,19 @@ import org.usfirst.frc.team1165.robot.commands.piston.MovePickupWheelsOut;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.WaitCommand;
 
-public class RunAutonomous1 extends CommandGroup
+public class PickupThreeTotesAndMoveToAutoZone extends CommandGroup
 {
 
-	public RunAutonomous1()
+	public PickupThreeTotesAndMoveToAutoZone()
 	{
 		addSequential(new PickupTote());
 		addSequential(new WaitCommand(RobotMap.WAIT_BETWEEN_PNEUMATIC_ACTIONS));
 		addSequential(new RotateToHeading(RobotMap.ROTATE_SPEED, 20, -40, 0.25));
 		addSequential(new MovePickupWheelsIn());
-		//addSequential(new WaitCommand(RobotMap.WAIT_FOR_SUBSYSTEM_TO_COMPLETE));
-		//addSequential(new DriveStraightDistance(RobotMap.DRIVE_START_SPEED, 2 ));
 		addSequential(new WaitCommand(RobotMap.WAIT_FOR_SUBSYSTEM_TO_COMPLETE));
 		addSequential(new DriveStraightDistance(RobotMap.DRIVE_SPEED, 15 ));
 		addSequential(new RotateToHeading(RobotMap.ROTATE_SPEED, 20, 60, 0.25));
 		addSequential(new MovePickupWheelsOut());
-		//addSequential(new WaitCommand(RobotMap.WAIT_FOR_SUBSYSTEM_TO_COMPLETE));
-		//addSequential(new DriveStraightDistance(RobotMap.DRIVE_START_SPEED, 2 ));
 		addSequential(new WaitCommand(RobotMap.WAIT_FOR_SUBSYSTEM_TO_COMPLETE));
 		addSequential(new DriveStraightDistance(RobotMap.DRIVE_SPEED , 20));
 		addParallel(new PickupWheelsSpinIn(RobotMap.PICKUP_WHEELS_SPEED, 1, false));

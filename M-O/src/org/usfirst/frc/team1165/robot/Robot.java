@@ -7,8 +7,8 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-import org.usfirst.frc.team1165.robot.commands.RunAutonomous0;
-import org.usfirst.frc.team1165.robot.commands.RunAutonomous1;
+import org.usfirst.frc.team1165.robot.commands.PickUpToteAndMoveToAutoZone;
+import org.usfirst.frc.team1165.robot.commands.PickupThreeTotesAndMoveToAutoZone;
 import org.usfirst.frc.team1165.robot.subsystems.BoxPickupWheels;
 import org.usfirst.frc.team1165.robot.subsystems.Camera;
 import org.usfirst.frc.team1165.robot.subsystems.DriveTrain;
@@ -35,8 +35,8 @@ public class Robot extends IterativeRobot
 	{
 		oi = new OI();
 		autoChooser = new SendableChooser();
-		autoChooser.addDefault("Autonomous 0", new RunAutonomous0());
-		autoChooser.addObject("Autonomous 1", new RunAutonomous1());
+		autoChooser.addDefault("Autonomous 0", new PickUpToteAndMoveToAutoZone());
+		autoChooser.addObject("Autonomous 1", new PickupThreeTotesAndMoveToAutoZone());
 		SmartDashboard.putData("Auto:", autoChooser);
 	}
 
