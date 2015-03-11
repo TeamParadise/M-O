@@ -65,5 +65,6 @@ public class RobotMap
 	
 	// USB Camera Name
 	public final static String cameraName = "cam0";
+	//public final static String cameraName = "cam11";   // for testing on Koehring's roboRIO
 
 }

@@ -11,6 +11,7 @@ import org.usfirst.frc.team1165.robot.commands.PickUpToteAndMoveToAutoZone;
 import org.usfirst.frc.team1165.robot.commands.PickupThreeTotesAndMoveToAutoZone;
 import org.usfirst.frc.team1165.robot.subsystems.BoxPickupWheels;
 import org.usfirst.frc.team1165.robot.subsystems.Camera;
+import org.usfirst.frc.team1165.robot.subsystems.Camera.CameraMode;
 import org.usfirst.frc.team1165.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team1165.robot.subsystems.QuadEncoder;
 import org.usfirst.frc.team1165.robot.subsystems.Gyroscope;
@@ -24,7 +25,7 @@ public class Robot extends IterativeRobot
 	public static final Gyroscope gyroscope = new Gyroscope();
 	public static final QuadEncoder quadEncoder = new QuadEncoder();
 	public static final BoxPickupWheels boxPickupWheels = new BoxPickupWheels();
-	public static final Camera camera = new Camera();
+	public static final Camera camera = new Camera(CameraMode.THREAD);
 	public static final ToteLifterStops toteLifterStops = new ToteLifterStops();
 	public static OI oi;
 	
@@ -34,6 +35,7 @@ public class Robot extends IterativeRobot
 	public void robotInit()
 	{
 		oi = new OI();
+				
 		autoChooser = new SendableChooser();
 		autoChooser.addDefault("Autonomous 0", new PickUpToteAndMoveToAutoZone());
 		autoChooser.addObject("Autonomous 1", new PickupThreeTotesAndMoveToAutoZone());
