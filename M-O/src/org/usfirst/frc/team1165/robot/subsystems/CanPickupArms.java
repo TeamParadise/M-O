@@ -14,34 +14,32 @@ public class CanPickupArms extends Subsystem
 	Talon leftPickupArm = new Talon(RobotMap.lefCanPickupArm);
 	Talon rightPickupArm = new Talon(RobotMap.rightCanPickupArm);
 	
-	// Put methods for controlling this subsystem
-	// here. Call these from Commands.
-	public void spinOut(double speed)
+	/**
+	 * Accepts a value in the form of a double or float from -1 to 1 and takes
+	 * the absolute value of it and inverts it for the left pickup motor so that
+	 * the arms will be moved up.
+	 * 
+	 * @param speed
+	 */
+	public void moveUp(double speed)
 	{
 		speed = Math.min(Math.abs(speed), 1);
 		leftPickupArm.set(-speed);
-		rightPickupArm.set(speed);
+		rightPickupArm.set(speed*0.75);
 	}
-	
-	public void spinIn(double speed)
+
+	/**
+	 * Accepts a value in the form of a double or float from -1 to 1 and takes
+	 * the absolute value of it and inverts it for the right pickup motor so
+	 * that the arms will be moved down.
+	 * 
+	 * @param speed
+	 */
+	public void moveDown(double speed)
 	{
 		speed = Math.min(Math.abs(speed), 1);
 		leftPickupArm.set(speed);
-		rightPickupArm.set(-speed);
-	}
-	
-	public void spinRight(double speed)
-	{
-		speed = Math.min(Math.abs(speed), 1);
-		leftPickupArm.set(speed);
-		rightPickupArm.set(speed);
-	}
-	
-	public void spinLeft(double speed)
-	{
-		speed = Math.min(Math.abs(speed), 1);
-		leftPickupArm.set(-speed);
-		rightPickupArm.set(-speed);
+		rightPickupArm.set(-speed*0.75);
 	}
 	
 	public void idle()
