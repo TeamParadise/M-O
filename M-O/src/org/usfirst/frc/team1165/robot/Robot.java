@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team1165.robot.commands.MoveRobotAndToteToAutoZone;
 import org.usfirst.frc.team1165.robot.commands.MoveRobotAndThreeTotesToAutoZone;
+import org.usfirst.frc.team1165.robot.commands.MoveRobotToAutoZone;
 import org.usfirst.frc.team1165.robot.subsystems.BoxPickupWheels;
 import org.usfirst.frc.team1165.robot.subsystems.Camera;
 import org.usfirst.frc.team1165.robot.subsystems.Camera.CameraMode;
@@ -37,8 +38,9 @@ public class Robot extends IterativeRobot
 		oi = new OI();
 				
 		autoChooser = new SendableChooser();
-		autoChooser.addDefault("Autonomous 0", new MoveRobotAndToteToAutoZone());
-		autoChooser.addObject("Autonomous 1", new MoveRobotAndThreeTotesToAutoZone());
+		autoChooser.addObject("Move Forward", new MoveRobotToAutoZone("Auto Speed", "Auto Inches"));
+		autoChooser.addDefault("Single Tote", new MoveRobotAndToteToAutoZone());
+		autoChooser.addObject("All Totes", new MoveRobotAndThreeTotesToAutoZone());
 		SmartDashboard.putData("Auto:", autoChooser);
 	}
 

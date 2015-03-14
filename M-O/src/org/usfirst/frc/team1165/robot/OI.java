@@ -68,6 +68,9 @@ public class OI
 		SmartDashboard.putNumber("Brake Heading", 10);
 		SmartDashboard.putNumber("Rotate Magnitude", .4);
 		SmartDashboard.putNumber("Creep Magnitude", .2);
+		
+		SmartDashboard.putNumber("Auto Speed", 0.5);
+		SmartDashboard.putNumber("Auto Inches", 60);
 
 		// Smart dashboard buttons
 		SmartDashboard.putData(new DriveStraightDistance("Forward Speed", "Drive Inches"));

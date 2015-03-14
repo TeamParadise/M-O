@@ -11,10 +11,8 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
 public class MoveRobotToAutoZone extends CommandGroup
 {
 
-	public MoveRobotToAutoZone()
+	public MoveRobotToAutoZone(String speedKey, String inchesDistanceKey)
 	{
-		addSequential(new RotateToHeading(RobotMap.ROTATE_SPEED, 15, 90, RobotMap.ROTATE_CREEP_SPEED));
-		addSequential(new WaitCommand(RobotMap.WAIT_FOR_SUBSYSTEM_TO_COMPLETE)); //give gyro and encoder a chance to reset
-		addSequential(new DriveStraightDistance(0.5 , RobotMap.DISTANCE_TO_AUTO_ZONE ));
+		addSequential(new DriveStraightDistance(speedKey, inchesDistanceKey));
 	}
 }
