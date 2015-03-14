@@ -57,6 +57,11 @@ public class RobotMap
 	public static final double leftServoDisengagePosition 	= 0.425;
 	public static final double rightServoDisengagePosition 	= 0.5;
 	
+	//canpickuparm
+	public static final int lefCanPickupArm = 6;
+	public static final int rightCanPickupArm = 7;
+			
+
 	// PCM and Solenoids
 	public static final int pickupWheelPistonsInChannel		= 0;
 	public static final int pickupWheelPistonsOutChannel	= 1;

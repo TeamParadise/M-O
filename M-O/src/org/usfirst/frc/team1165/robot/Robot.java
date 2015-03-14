@@ -13,6 +13,7 @@ import org.usfirst.frc.team1165.robot.commands.MoveRobotToAutoZone;
 import org.usfirst.frc.team1165.robot.subsystems.BoxPickupWheels;
 import org.usfirst.frc.team1165.robot.subsystems.Camera;
 import org.usfirst.frc.team1165.robot.subsystems.Camera.CameraMode;
+import org.usfirst.frc.team1165.robot.subsystems.CanPickupArms;
 import org.usfirst.frc.team1165.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team1165.robot.subsystems.QuadEncoder;
 import org.usfirst.frc.team1165.robot.subsystems.Gyroscope;
@@ -29,6 +30,7 @@ public class Robot extends IterativeRobot
 	public static final Camera camera = new Camera(CameraMode.THREAD);
 	public static final ToteLifterStops toteLifterStops = new ToteLifterStops();
 	public static OI oi;
+	public static final CanPickupArms canPickupArms = new CanPickupArms();
 	
 	SendableChooser autoChooser;
 	Command autonomousCommand;

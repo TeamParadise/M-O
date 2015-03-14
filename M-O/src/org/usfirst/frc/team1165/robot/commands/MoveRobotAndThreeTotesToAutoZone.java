@@ -14,6 +14,7 @@ public class MoveRobotAndThreeTotesToAutoZone extends CommandGroup
 
 	public MoveRobotAndThreeTotesToAutoZone()
 	{
+		//Code for rotating and moving towards the barrier.
 		addSequential(new PickupTote());
 		addSequential(new WaitCommand(RobotMap.WAIT_BETWEEN_PNEUMATIC_ACTIONS));
 		addSequential(new RotateToHeading(RobotMap.ROTATE_SPEED, 20, -40, 0.25));

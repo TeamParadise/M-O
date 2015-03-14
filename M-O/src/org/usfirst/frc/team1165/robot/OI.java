@@ -140,18 +140,38 @@ public class OI
 	
 	public double boxPickupSpeedX()
 	{
-		return secondaryJoystick.getX();
+		return secondaryButton2.get()
+			? 0 
+			: secondaryJoystick.getX();
 	}
 
 	public double boxPickupSpeedY()
 	{
 		// Pushing forward on the joystick returns negative y values.
 		// We want the reverse of that.
-		return -secondaryJoystick.getY();
+		return secondaryButton2.get() 
+			? 0 
+			: -secondaryJoystick.getY();
 	}
-	
+
 	public double twistAngle()
 	{
 		return secondaryJoystick.getTwist();
+	}
+	
+	public double canPickupSpeedX()
+	{
+		return secondaryButton2.get() 
+			? secondaryJoystick.getX() 
+			: 0;
+	}
+
+	public double canPickupSpeedY()
+	{
+		// Pushing forward on the joystick returns negative y values.
+		// We want the reverse of that.
+		return secondaryButton2.get() 
+			? -secondaryJoystick.getY() 
+			: 0;
 	}
 }
