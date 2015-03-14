@@ -23,6 +23,9 @@ public class RobotMap
     public static final double DISTANCE_TO_AUTO_ZONE 				= 125;    // Inches
     public static final double TCAS_DISTANCE 						=  90;    // Inches
     public static final double TCAS_SITANDSPIN 						=  90;    // Inches
+    public static final double RECYCLE_BIN_ERROR_MARGIN				=  1;    // Inches
+    public static final double CREEP_TO_OBJECT_TIMEOUT				=  7.5;    // seconds
+
     
     // Wheel motors: Digital I/O PWM
     public static final int frontLeftMotorChannel			= 0;
