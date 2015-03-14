@@ -16,21 +16,25 @@ public class DriveStraightDistanceWithTcas extends Command
 	private double sitAndSpin; //distance from the sonar at which all forward motion stops and we twist until sonar clears
 	private boolean didWeAvoidOneThing = false;
 	
-	public DriveStraightDistanceWithTcas(String forwardSpeedKey, String driveInchesKey) 
+	private DriveStraightDistanceWithTcas()
 	{
 		requires(Robot.driveTrain);
+	}
+	
+	public DriveStraightDistanceWithTcas(String forwardSpeedKey, String driveInchesKey) 
+	{
+		this();
 		this.forwardSpeedKey = forwardSpeedKey;
 		this.driveInchesKey = driveInchesKey;
 	}
 
 	public DriveStraightDistanceWithTcas(double forwardSpeed, double driveInches, double tcas, double sitAndSpin) 
 	{
-		requires(Robot.driveTrain);
+		this();
 		this.forwardSpeed = forwardSpeed;
 		this.driveInches = driveInches;
 		this.tcas = tcas;
 		this.sitAndSpin = sitAndSpin;
-		forwardSpeedKey = null;
 	}
 
 	protected void initialize()

@@ -101,8 +101,6 @@ public class OI
 		
 		// Joystick button mapping
 		secondaryButton1.whenPressed(new PickupTote());
-
-		secondaryButton2.whenPressed(new TogglePickupWheels(secondaryButton2));
 		
 		secondaryButton3.whenPressed(new EngageToteLifterStops());
 		secondaryButton5.whenPressed(new DisengageToteLifterStops());

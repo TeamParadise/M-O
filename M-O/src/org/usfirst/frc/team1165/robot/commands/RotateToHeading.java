@@ -9,6 +9,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class RotateToHeading extends Command
 {
+	private String brakeOffsetKey;
+	private String targetHeadingKey;
+	private String rotateMagnitudeKey;
+	private String creepMagnitudeKey;
+	
 	private double brakeOffset;
 	private double targetHeading;
 	private double rotateMagnitude;
@@ -18,23 +23,25 @@ public class RotateToHeading extends Command
 	private double previousHeading; 
 	private boolean isCreeping;
 	private double sign;
-
-	public RotateToHeading(String rotateMagnitudeKey, String brakeOffsetKey, String targetHeadingKey, String creepMagnitudeKey)
+	
+	private RotateToHeading()
 	{
 		requires(Robot.driveTrain);
 		requires(Robot.gyroscope);
+	}
 
-		brakeOffset = Math.abs(SmartDashboard.getNumber(brakeOffsetKey));
-		targetHeading = SmartDashboard.getNumber(targetHeadingKey);
-		rotateMagnitude = Math.abs(SmartDashboard.getNumber(rotateMagnitudeKey));
-		creepMagnitude = Math.abs(SmartDashboard.getNumber(creepMagnitudeKey));
+	public RotateToHeading(String rotateMagnitudeKey, String brakeOffsetKey, String targetHeadingKey, String creepMagnitudeKey)
+	{
+		this();
+		this.brakeOffsetKey = brakeOffsetKey;
+		this.targetHeadingKey = targetHeadingKey;
+		this.rotateMagnitudeKey = rotateMagnitudeKey;
+		this.creepMagnitudeKey = creepMagnitudeKey;
 	}
 
 	public RotateToHeading(double rotateMagnitude, double brakeOffset, double targetHeading, double creepMagnitude)
 	{
-		requires(Robot.driveTrain);
-		requires(Robot.gyroscope);
-
+		this();
 		this.brakeOffset = Math.abs(brakeOffset);
 		this.targetHeading = targetHeading;
 		this.rotateMagnitude = rotateMagnitude;
@@ -49,6 +56,14 @@ public class RotateToHeading extends Command
 	// Called just before this Command runs the first time
 	protected void initialize()
 	{
+		if (null != brakeOffsetKey)
+		{
+			brakeOffset = Math.abs(SmartDashboard.getNumber(brakeOffsetKey));
+			targetHeading = SmartDashboard.getNumber(targetHeadingKey);
+			rotateMagnitude = Math.abs(SmartDashboard.getNumber(rotateMagnitudeKey));
+			creepMagnitude = Math.abs(SmartDashboard.getNumber(creepMagnitudeKey));
+		}
+		
 		Robot.gyroscope.reset();
 				
 		// If our target is within braking range, do not start driving, 

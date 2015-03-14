@@ -10,27 +10,30 @@ public class DriveHalfCircle extends Command
 	private String forwardSpeedKey;
 	private double currentHeading;
 	private double originalHeading;
-	//private String twistCorrectionKey;
 
 	private double forwardSpeed;
 	
-	public DriveHalfCircle(String forwardSpeedKey) 
+	private DriveHalfCircle()
 	{
 		requires(Robot.driveTrain);
+	}
+	
+	public DriveHalfCircle(String forwardSpeedKey) 
+	{
+		this();
 		this.forwardSpeedKey = forwardSpeedKey;
 	}
 
 	public DriveHalfCircle(double forwardSpeed) 
 	{
-		requires(Robot.driveTrain);
+		this();
 		this.forwardSpeed = forwardSpeed;
-		forwardSpeedKey = null;
 	}
 
 	protected void initialize()
 	{
 		originalHeading = Robot.gyroscope.getHeading();
-		if (null  != forwardSpeedKey)
+		if (null != forwardSpeedKey)
 		{
 			forwardSpeed = SmartDashboard.getNumber(forwardSpeedKey);
 		}

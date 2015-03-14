@@ -24,9 +24,14 @@ public class DriveToObject extends Command
 	
 	private boolean isCreeping;
 	
-	public DriveToObject(String forwardSpeedKey, String brakeRangeKey, String targetRangeKey, String creepSpeedKey)
+	private DriveToObject()
 	{
 		requires(Robot.driveTrain);
+	}
+	
+	public DriveToObject(String forwardSpeedKey, String brakeRangeKey, String targetRangeKey, String creepSpeedKey)
+	{
+		this();
 		this.forwardSpeedKey = forwardSpeedKey;
 		this.brakeRangeKey = brakeRangeKey;
 		this.targetRangeKey = targetRangeKey;
@@ -35,13 +40,12 @@ public class DriveToObject extends Command
 
 	public DriveToObject(double forwardSpeed, double brakeRange, double targetRange, double creepSpeed, double neverMore)
 	{
-		requires(Robot.driveTrain);
+		this();
 		this.forwardSpeed = forwardSpeed;
 		this.brakeRange = brakeRange;
 		this.targetRange = targetRange;
 		this.creepSpeed = creepSpeed;
 		this.neverMore = neverMore;
-		forwardSpeedKey = null;
 	}
 
 	protected void initialize()

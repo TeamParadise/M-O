@@ -12,24 +12,37 @@ public class DriveStraightDistance extends Command
 	private double forwardSpeed;
 	private double driveInches;
 	
-	public DriveStraightDistance(String forwardSpeedKey, String driveInchesKey) 
+	private String forwardSpeedKey;
+	private String driveInchesKey;
+	
+	private DriveStraightDistance()
 	{
 		requires(Robot.driveTrain);
 		requires(Robot.gyroscope);
-		forwardSpeed = SmartDashboard.getNumber(forwardSpeedKey);
-		driveInches = SmartDashboard.getNumber(driveInchesKey);
+	}
+	
+	public DriveStraightDistance(String forwardSpeedKey, String driveInchesKey) 
+	{
+		this();
+		this.forwardSpeedKey = forwardSpeedKey;
+		this.driveInchesKey = driveInchesKey;
 	}
 
 	public DriveStraightDistance(double forwardSpeed, double driveInches) 
 	{
-		requires(Robot.driveTrain);
-		requires(Robot.gyroscope);
+		this();
 		this.forwardSpeed = forwardSpeed;
 		this.driveInches = driveInches;
 	}
 
 	protected void initialize()
 	{
+		if (forwardSpeedKey != null)
+		{
+			forwardSpeed = SmartDashboard.getNumber(forwardSpeedKey);
+			driveInches = SmartDashboard.getNumber(driveInchesKey);
+		}
+		
 		Robot.gyroscope.reset();
 		Robot.quadEncoder.reset();
 	}

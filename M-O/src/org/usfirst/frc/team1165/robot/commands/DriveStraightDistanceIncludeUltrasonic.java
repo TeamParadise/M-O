@@ -16,19 +16,23 @@ public class DriveStraightDistanceIncludeUltrasonic extends Command
 	private double forwardSpeed;
 	private double driveInches;
 	
-	public DriveStraightDistanceIncludeUltrasonic(String forwardSpeedKey, String driveInchesKey) 
+	private DriveStraightDistanceIncludeUltrasonic()
 	{
 		requires(Robot.driveTrain);
+	}
+	
+	public DriveStraightDistanceIncludeUltrasonic(String forwardSpeedKey, String driveInchesKey) 
+	{
+		this();
 		this.forwardSpeedKey = forwardSpeedKey;
 		this.driveInchesKey = driveInchesKey;
 	}
 
 	public DriveStraightDistanceIncludeUltrasonic(double forwardSpeed, double driveInches) 
 	{
-		requires(Robot.driveTrain);
+		this();
 		this.forwardSpeed = forwardSpeed;
 		this.driveInches = driveInches;
-		forwardSpeedKey = null;
 	}
 
 	protected void initialize()
