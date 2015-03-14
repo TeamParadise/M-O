@@ -6,9 +6,6 @@ import org.usfirst.frc.team1165.robot.commands.RunPickupArmsFromJoystick;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-/**
- *
- */
 public class CanPickupArms extends Subsystem
 {
 	Talon leftPickupArm = new Talon(RobotMap.lefCanPickupArm);
@@ -38,8 +35,8 @@ public class CanPickupArms extends Subsystem
 	public void moveDown(double speed)
 	{
 		speed = Math.min(Math.abs(speed), 1);
-		leftPickupArm.set(speed);
-		rightPickupArm.set(-speed*0.75);
+		leftPickupArm.set(speed * 0.5);
+		rightPickupArm.set(-speed);
 	}
 	
 	public void idle()
