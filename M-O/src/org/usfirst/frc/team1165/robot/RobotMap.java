@@ -13,6 +13,7 @@ public class RobotMap
 
     public static final double DRIVE_SPEED 							=   1;		// Drive magnitude
     public static final double DRIVE_START_SPEED 					=   1;		// Drive magnitude
+    public static final double DRIVE_CREEP_SPEED 	 =   0.2;	// Drive Creep magnitude
     public static final double ROTATE_SPEED 						=   0.4;	// Rotate magnitude
     public static final double ROTATE_CREEP_SPEED 					=   0.2;	// Rotate magnitude
     public static final double PICKUP_WHEELS_SPEED 					=   1;		// Wheel magitude
