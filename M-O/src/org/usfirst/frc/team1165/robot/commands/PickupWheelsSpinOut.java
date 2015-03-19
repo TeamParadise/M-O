@@ -20,7 +20,7 @@ public class PickupWheelsSpinOut extends Command
 
 	public PickupWheelsSpinOut(double magnitude, double timeout, boolean idle)
 	{
-		requires(Robot.boxPickupWheels);
+		this();
 		this.magnitude = magnitude;
 		this.idle = idle;
 		setTimeout(timeout);

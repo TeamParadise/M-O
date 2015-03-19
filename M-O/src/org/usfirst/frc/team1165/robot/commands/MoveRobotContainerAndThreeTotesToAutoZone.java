@@ -1,13 +1,8 @@
 package org.usfirst.frc.team1165.robot.commands;
 
 import org.usfirst.frc.team1165.robot.RobotMap;
-import org.usfirst.frc.team1165.robot.commands.piston.LiftTotes;
-import org.usfirst.frc.team1165.robot.commands.piston.LowerTotes;
 import org.usfirst.frc.team1165.robot.commands.piston.MovePickupWheelsIn;
-import org.usfirst.frc.team1165.robot.commands.piston.MovePickupWheelsOut;
-
 import edu.wpi.first.wpilibj.command.CommandGroup;
-import edu.wpi.first.wpilibj.command.WaitCommand;
 
 public class MoveRobotContainerAndThreeTotesToAutoZone extends CommandGroup
 {

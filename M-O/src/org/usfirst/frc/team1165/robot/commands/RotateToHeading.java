@@ -27,7 +27,6 @@ public class RotateToHeading extends Command
 	private RotateToHeading()
 	{
 		requires(Robot.driveTrain);
-		requires(Robot.gyroscope);
 	}
 
 	public RotateToHeading(String rotateMagnitudeKey, String brakeOffsetKey, String targetHeadingKey, String creepMagnitudeKey)

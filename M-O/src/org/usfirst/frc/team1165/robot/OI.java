@@ -2,7 +2,6 @@ package org.usfirst.frc.team1165.robot;
  
 import org.usfirst.frc.team1165.robot.commands.CreepToObject;
 import org.usfirst.frc.team1165.robot.commands.DisengageToteLifterStops;
-import org.usfirst.frc.team1165.robot.commands.DriveHalfCircle;
 import org.usfirst.frc.team1165.robot.commands.DriveStraight;
 import org.usfirst.frc.team1165.robot.commands.DriveStraightDistance;
 import org.usfirst.frc.team1165.robot.commands.DriveToObject;
@@ -18,7 +17,6 @@ import org.usfirst.frc.team1165.robot.commands.PickupWheelsStop;
 import org.usfirst.frc.team1165.robot.commands.ResetEncoder;
 import org.usfirst.frc.team1165.robot.commands.ResetGyro;
 import org.usfirst.frc.team1165.robot.commands.RotateToHeading;
-import org.usfirst.frc.team1165.robot.commands.TogglePickupWheels;
 import org.usfirst.frc.team1165.robot.commands.piston.LiftTotes;
 import org.usfirst.frc.team1165.robot.commands.piston.LowerTotes;
 import org.usfirst.frc.team1165.robot.commands.piston.MovePickupWheelsIn;
@@ -78,7 +76,6 @@ public class OI
 		SmartDashboard.putData(new DriveStraight("Forward Speed", 1));
 		SmartDashboard.putData(new CreepToObject("Target Range", "Creep Speed"));
 		SmartDashboard.putData(new DriveToObject("Forward Speed", "Brake Range", "Target Range", "Creep Speed"));
-		SmartDashboard.putData(new DriveHalfCircle("Forward Speed"));
 		SmartDashboard.putData(new RotateToHeading("Rotate Magnitude", "Brake Heading", "Target Heading", "Creep Magnitude"));
 
 		SmartDashboard.putData(new PickupWheelsStop());

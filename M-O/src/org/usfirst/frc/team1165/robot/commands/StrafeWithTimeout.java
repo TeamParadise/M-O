@@ -1,8 +1,6 @@
 package org.usfirst.frc.team1165.robot.commands;
 
 import org.usfirst.frc.team1165.robot.Robot;
-import org.usfirst.frc.team1165.robot.subsystems.DriveTrain;
-
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -11,14 +9,12 @@ import edu.wpi.first.wpilibj.command.Command;
 public class StrafeWithTimeout extends Command
 {
 
-	private double timeout;
 	private double speed;
 	
 	public StrafeWithTimeout(double speed,double timeout)
 	{
 		super(timeout);
 		requires(Robot.driveTrain);
-		this.timeout = timeout;
 		this.speed = speed;
 	}
 

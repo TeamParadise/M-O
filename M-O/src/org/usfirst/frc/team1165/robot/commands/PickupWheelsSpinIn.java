@@ -4,7 +4,6 @@ import org.usfirst.frc.team1165.robot.Robot;
 import org.usfirst.frc.team1165.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -22,7 +21,7 @@ public class PickupWheelsSpinIn extends Command
 
 	public PickupWheelsSpinIn(double magnitude, double timeout, boolean idle)
 	{
-		requires(Robot.boxPickupWheels);
+		this();
 		this.magnitude = magnitude;
 		this.idle = idle;
 		setTimeout(timeout);

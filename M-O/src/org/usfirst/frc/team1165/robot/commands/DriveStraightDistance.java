@@ -18,7 +18,6 @@ public class DriveStraightDistance extends Command
 	private DriveStraightDistance()
 	{
 		requires(Robot.driveTrain);
-		requires(Robot.gyroscope);
 	}
 	
 	public DriveStraightDistance(String forwardSpeedKey, String driveInchesKey) 
