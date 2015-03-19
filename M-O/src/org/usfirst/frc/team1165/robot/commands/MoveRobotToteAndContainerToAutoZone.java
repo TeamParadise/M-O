@@ -19,7 +19,7 @@ public class MoveRobotToteAndContainerToAutoZone extends CommandGroup
 		addSequential(new MovePickupArmsUp());
 		addSequential(new MovePickupWheelsIn());
 		addSequential(new RotateToHeading(RobotMap.ROTATE_SPEED, 15, 90, RobotMap.ROTATE_CREEP_SPEED));
-		addSequential(new WaitCommand(RobotMap.WAIT_FOR_SUBSYSTEM_TO_COMPLETE)); //give gyro and encoder a chance to reset
+		//addSequential(new WaitCommand(RobotMap.WAIT_FOR_SUBSYSTEM_TO_COMPLETE)); //give gyro and encoder a chance to reset
 		addSequential(new DriveStraightDistance(0.5 , RobotMap.DISTANCE_TO_AUTO_ZONE ));
 	}
 }

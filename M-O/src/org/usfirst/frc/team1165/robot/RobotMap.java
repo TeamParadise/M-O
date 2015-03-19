@@ -19,9 +19,9 @@ public class RobotMap
     public static final double PICKUP_WHEELS_SPEED 					=   1;		// Wheel magitude
     public static final double PICKUP_WHEELS_SPIN_OUT_TIME 			=   2;		// Seconds
     public static final double ROBOT_BACKUP_FROM_SCORING_PLATFORM 	=  31;		// Inches
-    public static final double WAIT_BETWEEN_PNEUMATIC_ACTIONS 		=   0.8;	// Seconds 
-    public static final double WAIT_FOR_SUBSYSTEM_TO_COMPLETE	 	=   0.01; 	// Seconds 
-    public static final double DISTANCE_TO_AUTO_ZONE 				= 125;		// Inches
+    public static final double WAIT_BETWEEN_PNEUMATIC_ACTIONS 		=  0.8;	// Seconds 
+    public static final double WAIT_FOR_SUBSYSTEM_TO_COMPLETE	 	=  0.01; 	// Seconds 
+    public static final double DISTANCE_TO_AUTO_ZONE 				=  85;		// Inches
     public static final double TCAS_DISTANCE 						=  90;		// Inches
     public static final double TCAS_SITANDSPIN 						=  90;		// Inches
     public static final double RECYCLE_BIN_ERROR_MARGIN				=   1;		// Inches

@@ -8,10 +8,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team1165.robot.commands.MoveRobotAndToteToAutoZone;
-import org.usfirst.frc.team1165.robot.commands.MoveRobotContainerAndThreeTotesToAutoZone;
+import org.usfirst.frc.team1165.robot.commands.MoveRobotANDTwoTotesToAutoZone;
 import org.usfirst.frc.team1165.robot.commands.MoveRobotToAutoZone;
 import org.usfirst.frc.team1165.robot.commands.MoveRobotToteAndContainerToAutoZone;
-import org.usfirst.frc.team1165.robot.commands.MoveRobotContainerAndTwoTotesToAutoZone;
 import org.usfirst.frc.team1165.robot.subsystems.BoxPickupWheels;
 import org.usfirst.frc.team1165.robot.subsystems.Camera;
 import org.usfirst.frc.team1165.robot.subsystems.Camera.CameraMode;
@@ -45,8 +44,7 @@ public class Robot extends IterativeRobot
 		autoChooser.addObject("Move Robot To Auto Zone", new MoveRobotToAutoZone("Auto Speed", "Auto Inches"));
 		autoChooser.addDefault("Single Tote", new MoveRobotAndToteToAutoZone());
 		autoChooser.addObject("Single Tote AND Container", new MoveRobotToteAndContainerToAutoZone());
-		autoChooser.addObject("Move two totes AND Container to Auto Zone", new MoveRobotContainerAndTwoTotesToAutoZone());
-		autoChooser.addObject("Move Three Totes AND Container to Auto Zone", new MoveRobotContainerAndThreeTotesToAutoZone());
+		autoChooser.addObject("Move two totes to Auto Zone", new MoveRobotANDTwoTotesToAutoZone());
 		SmartDashboard.putData("Auto:", autoChooser);
 	}
 
