@@ -61,6 +61,8 @@ public class DriveToObject extends Command
 		Robot.gyroscope.reset();
 		isCreeping = false;
 		previousRange = 0;
+		if (Robot.rangeFinder.getRange() <= 26)
+			targetRange = 4;
 	}
 
 	protected void execute()
