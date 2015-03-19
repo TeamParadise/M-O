@@ -14,8 +14,8 @@ public class RobotMap
     public static final double DRIVE_SPEED 							=   1;		// Drive magnitude
     public static final double DRIVE_START_SPEED 					=   1;		// Drive magnitude
     public static final double DRIVE_CREEP_SPEED 	 =   0.2;	// Drive Creep magnitude
-    public static final double ROTATE_SPEED 						=   0.4;	// Rotate magnitude
-    public static final double ROTATE_CREEP_SPEED 					=   0.2;	// Rotate magnitude
+    public static final double ROTATE_SPEED 						=   0.6;	// Rotate magnitude
+    public static final double ROTATE_CREEP_SPEED 					=   0.4;	// Rotate magnitude
     public static final double PICKUP_WHEELS_SPEED 					=   1;		// Wheel magitude
     public static final double PICKUP_WHEELS_SPIN_OUT_TIME 			=   2;		// Seconds
     public static final double ROBOT_BACKUP_FROM_SCORING_PLATFORM 	=  31;		// Inches
@@ -26,6 +26,7 @@ public class RobotMap
     public static final double TCAS_SITANDSPIN 						=  90;		// Inches
     public static final double RECYCLE_BIN_ERROR_MARGIN				=   1;		// Inches
     public static final double CREEP_TO_OBJECT_TIMEOUT				=   7.5;	// seconds
+    public static final double ROTATE_TO_HEADING_TIMEOUT			=	1.5;	// seconds
 
     
     // Wheel motors: Digital I/O PWM
@@ -62,8 +63,8 @@ public class RobotMap
 	public static final double rightServoDisengagePosition 	= 0.5;
 	
 	//canpickuparm
-	public static final int lefCanPickupArm = 6;
-	public static final int rightCanPickupArm = 7;
+	public static final int lefCanPickupArm = 2;
+	public static final int rightCanPickupArm = 3;
 			
 
 	// PCM and Solenoids

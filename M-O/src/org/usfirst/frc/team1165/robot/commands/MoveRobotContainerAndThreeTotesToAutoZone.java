@@ -10,6 +10,7 @@ public class MoveRobotContainerAndThreeTotesToAutoZone extends CommandGroup
 	public MoveRobotContainerAndThreeTotesToAutoZone()
 	{
 		addSequential(new PickupTote());
+		//addSequential(new MovePickupArmsDown());
 		addSequential(new MovePickupArmsUp());
 		addParallel(new MovePickupWheelsIn());
 		addSequential(new DriveToObject(RobotMap.DRIVE_SPEED , 40 , 6 , RobotMap.DRIVE_CREEP_SPEED , 84 ));

@@ -55,7 +55,7 @@ public class DriveStraightDistance extends Command
  
 	protected boolean isFinished()
 	{
-		return Math.abs(Robot.quadEncoder.getInches()) > Math.abs(driveInches);
+		return Math.abs(Robot.quadEncoder.getInches()) > driveInches;
 	}
 
 	protected void end()

@@ -1,6 +1,7 @@
 package org.usfirst.frc.team1165.robot.commands;
 
 import org.usfirst.frc.team1165.robot.Robot;
+import org.usfirst.frc.team1165.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -26,6 +27,7 @@ public class RotateToHeading extends Command
 	
 	private RotateToHeading()
 	{
+		super(RobotMap.ROTATE_TO_HEADING_TIMEOUT);
 		requires(Robot.driveTrain);
 	}
 
@@ -104,8 +106,9 @@ public class RotateToHeading extends Command
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished()
 	{
-		return Math.abs(Robot.gyroscope.getHeading()) >= Math.abs(targetHeading);
+		return Math.abs(Robot.gyroscope.getHeading()) >= Math.abs(targetHeading) || isTimedOut();
 	}
+	
 
 	// Called once after isFinished returns true
 	protected void end()
