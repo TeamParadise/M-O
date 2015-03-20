@@ -12,7 +12,7 @@ public class MovePickupArmsUp extends Command
 
 	public MovePickupArmsUp()
 	{
-		super(1.8);
+		super(2.0);
 		requires(Robot.canPickupArms);
 	}
 

@@ -32,7 +32,7 @@ public class DriveWithJoystick extends Command
         
         calTwist *= 2.0/3;
 
-        Robot.driveTrain.driveCartesian(calX, calY, calTwist, 0);
+        Robot.driveTrain.driveCartesian(calX, calY, calTwist*0.7, 0);
     }
     
     protected boolean isFinished() 

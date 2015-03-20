@@ -6,6 +6,7 @@ import org.usfirst.frc.team1165.robot.commands.DriveStraight;
 import org.usfirst.frc.team1165.robot.commands.DriveStraightDistance;
 import org.usfirst.frc.team1165.robot.commands.DriveToObject;
 import org.usfirst.frc.team1165.robot.commands.EngageToteLifterStops;
+import org.usfirst.frc.team1165.robot.commands.ExcreateOnScoringPlatformWithoutDefaultPositions;
 import org.usfirst.frc.team1165.robot.commands.ExcreteOnScoringPlatform;
 import org.usfirst.frc.team1165.robot.commands.ExcreteOnStep;
 import org.usfirst.frc.team1165.robot.commands.PickupTote;
@@ -113,7 +114,7 @@ public class OI
 		secondaryButton7.whenPressed(new LowerTotes());
 		secondaryButton8.whenPressed(new LiftTotes());
 		
-		secondaryButton9.whenPressed(new CreepToObject("Target Range", "Creep Speed"));
+		secondaryButton9.whenPressed(new ExcreateOnScoringPlatformWithoutDefaultPositions());
 
 		secondaryButton10.whenPressed(new ExcreteOnStep());
 		secondaryButton11.whenPressed(new ExcreteOnScoringPlatform());
