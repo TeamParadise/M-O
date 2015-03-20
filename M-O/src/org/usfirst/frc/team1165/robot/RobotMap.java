@@ -70,9 +70,10 @@ public class RobotMap
 	// PCM and Solenoids
 	public static final int pickupWheelPistonsInChannel		= 0;
 	public static final int pickupWheelPistonsOutChannel	= 1;
-	public static final int toteLifterPistonInChannel		= 2;
-	public static final int toteLifterPistonOutChannel		= 3;
-	
+	public static final int toteLifterPistonHighInChannel		= 2; //high pressure lifting controller
+	public static final int toteLifterPistonHighOutChannel		= 3;
+	public static final int toteLifterPistonLowInChannelController 		= 4; //second controller for lowering lifter piston with lower PSI
+	public static final int toteLifterPistonLowOutChannelController 		= 5;
 	// USB Camera Name
 	public final static String cameraName = "cam0";
 	//public final static String cameraName = "cam11";   // for testing on Koehring's roboRIO

@@ -24,10 +24,11 @@ public abstract class PistonCommand extends Command
     public static Piston pickupWheelPistons =
         new Piston(RobotMap.pickupWheelPistonsInChannel, RobotMap.pickupWheelPistonsOutChannel);
     
-    public static Piston toteLifterPiston = new Piston(RobotMap.toteLifterPistonInChannel, RobotMap.toteLifterPistonOutChannel);
-    
+    public static Piston toteLifterPiston = new Piston(RobotMap.toteLifterPistonHighInChannel, RobotMap.toteLifterPistonHighOutChannel);
+    public static Piston toteLowerLifterPiston = new Piston(RobotMap.toteLifterPistonLowInChannelController, RobotMap.toteLifterPistonLowOutChannelController);
     private final boolean isExtending;
     private final Piston piston;
+    private final Piston controller2; //if not null, we have two controllers on one piston to save air
 	
 	final static boolean extend = true;
 	final static boolean retract = false;
@@ -40,6 +41,16 @@ public abstract class PistonCommand extends Command
 		requires(piston);
         this.piston = piston;
         this.isExtending = isExtending;
+        controller2 = null;
+    }
+
+    public PistonCommand(Piston piston, Piston controller2, boolean isExtending)
+	{
+		super(powerOnTime);
+		requires(piston);
+        this.piston = piston;
+        this.isExtending = isExtending;
+        this.controller2 = controller2;
     }
 
     protected void initialize() 
@@ -47,10 +58,14 @@ public abstract class PistonCommand extends Command
         if (isExtending) 
         {
             piston.extend();
+            if (controller2 != null)
+            	controller2.extend();
         }
 		else 
         {
             piston.retract();
+            if (controller2 != null)
+            	controller2.retract();
         }
     }
 

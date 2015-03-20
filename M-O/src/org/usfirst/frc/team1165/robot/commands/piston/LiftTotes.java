@@ -8,6 +8,6 @@ public class LiftTotes extends PistonCommand
 
 	public LiftTotes()
 	{
-		super(toteLifterPiston, retract);
+		super(toteLifterPiston, toteLowerLifterPiston, retract);
 	}
 }
