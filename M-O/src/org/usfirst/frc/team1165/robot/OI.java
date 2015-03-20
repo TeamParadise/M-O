@@ -18,8 +18,8 @@ import org.usfirst.frc.team1165.robot.commands.PickupWheelsStop;
 import org.usfirst.frc.team1165.robot.commands.ResetEncoder;
 import org.usfirst.frc.team1165.robot.commands.ResetGyro;
 import org.usfirst.frc.team1165.robot.commands.RotateToHeading;
-import org.usfirst.frc.team1165.robot.commands.piston.LiftTotes;
-import org.usfirst.frc.team1165.robot.commands.piston.LowerTotes;
+import org.usfirst.frc.team1165.robot.commands.piston.LiftTotePiston;
+import org.usfirst.frc.team1165.robot.commands.piston.TotePistonLowPressureAir;
 import org.usfirst.frc.team1165.robot.commands.piston.MovePickupWheelsIn;
 import org.usfirst.frc.team1165.robot.commands.piston.MovePickupWheelsOut;
 
@@ -85,8 +85,8 @@ public class OI
 		SmartDashboard.putData(new PickupWheelsSpinRight());
 		SmartDashboard.putData(new PickupWheelsSpinLeft());
 		
-		SmartDashboard.putData(new LiftTotes());
-		SmartDashboard.putData(new LowerTotes());
+		SmartDashboard.putData(new LiftTotePiston());
+		SmartDashboard.putData(new TotePistonLowPressureAir());
 		
 		SmartDashboard.putData(new MovePickupWheelsIn());
 		SmartDashboard.putData(new MovePickupWheelsOut());
@@ -111,8 +111,8 @@ public class OI
 		secondaryButton4.whenPressed(new MovePickupWheelsIn());
 		secondaryButton6.whenPressed(new MovePickupWheelsOut());
 		
-		secondaryButton7.whenPressed(new LowerTotes());
-		secondaryButton8.whenPressed(new LiftTotes());
+		secondaryButton7.whenPressed(new TotePistonLowPressureAir());
+		secondaryButton8.whenPressed(new LiftTotePiston());
 		
 		secondaryButton9.whenPressed(new ExcreateOnScoringPlatformWithoutDefaultPositions());
 
