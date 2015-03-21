@@ -22,12 +22,14 @@ public class DriveStraightDistance extends Command
 	
 	public DriveStraightDistance(String forwardSpeedKey, String driveInchesKey) 
 	{
+		this();
 		this.forwardSpeedKey = forwardSpeedKey;
 		this.driveInchesKey = driveInchesKey;
 	}
 
 	public DriveStraightDistance(double forwardSpeed, double driveInches) 
 	{
+		this();
 		this.forwardSpeed = forwardSpeed;
 		this.driveInches = driveInches;
 	}

@@ -26,7 +26,7 @@ public class RobotMap
     public static final double TCAS_SITANDSPIN 						=  90;		// Inches
     public static final double RECYCLE_BIN_ERROR_MARGIN				=   1;		// Inches
     public static final double CREEP_TO_OBJECT_TIMEOUT				=   7.5;	// seconds
-    public static final double ROTATE_TO_HEADING_TIMEOUT			=	1.5;	// seconds
+    public static final double ROTATE_TO_HEADING_TIMEOUT			=	3;	// seconds
 
     
     // Wheel motors: Digital I/O PWM
