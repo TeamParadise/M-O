@@ -15,6 +15,7 @@ public class MoveRobotAndToteToAutoZone extends CommandGroup
 		addSequential(new WaitCommand(0.8));
 		addSequential(new MovePickupWheelsIn());
 		addSequential(new RotateToHeading(RobotMap.ROTATE_SPEED, 15, 90, RobotMap.ROTATE_CREEP_SPEED));
-		addSequential(new DriveStraightDistance(0.8, RobotMap.DISTANCE_TO_AUTO_ZONE  ));
+		addSequential(new WaitCommand(0.3));
+		addSequential(new DriveStraightDistance(0.8, RobotMap.DISTANCE_TO_AUTO_ZONE, RobotMap.DRIVE_CREEP_SPEED, RobotMap.CREEP_DISTANCE ));
 	}
 }

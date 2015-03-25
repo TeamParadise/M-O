@@ -11,7 +11,7 @@ public class RobotMap
     public static final double SONIC_TOTE_IN 						=   7;		// Inches from ultrasonic to captured tote
     public static final double SONIC_AT_STEP 						=  33;		// Inches from ultrasonic to step
 
-    public static final double DRIVE_SPEED 							=   1;		// Drive magnitude
+    public static final double DRIVE_SPEED 							=   0.4;		// Drive magnitude
     public static final double DRIVE_START_SPEED 					=   1;		// Drive magnitude
     public static final double DRIVE_CREEP_SPEED 	 =   0.2;	// Drive Creep magnitude
     public static final double ROTATE_SPEED 						=   0.4;	// Rotate magnitude
@@ -21,7 +21,8 @@ public class RobotMap
     public static final double ROBOT_BACKUP_FROM_SCORING_PLATFORM 	=  31;		// Inches
     public static final double WAIT_BETWEEN_PNEUMATIC_ACTIONS 		=  0.8;	// Seconds 
     public static final double WAIT_FOR_SUBSYSTEM_TO_COMPLETE	 	=  0.01; 	// Seconds 
-    public static final double DISTANCE_TO_AUTO_ZONE 				=  65;		// Inches
+    public static final double DISTANCE_TO_AUTO_ZONE 				=  60;		// Inches
+    public static final double CREEP_DISTANCE 						=  30;		// Inches
     public static final double TCAS_DISTANCE 						=  90;		// Inches
     public static final double TCAS_SITANDSPIN 						=  90;		// Inches
     public static final double RECYCLE_BIN_ERROR_MARGIN				=   1;		// Inches

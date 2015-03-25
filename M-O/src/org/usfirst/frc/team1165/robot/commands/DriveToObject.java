@@ -67,7 +67,7 @@ public class DriveToObject extends Command
 
 	protected void execute()
 	{
-		SmartDashboard.putBoolean("Is creeping", isCreeping);
+		//SmartDashboard.putBoolean("Is creeping", isCreeping);
 		
 		// We drive forward until we reach brakeRange.
 		// We then reverse the motors until we come to a stop.

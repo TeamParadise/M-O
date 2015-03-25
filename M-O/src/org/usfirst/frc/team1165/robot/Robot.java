@@ -46,7 +46,7 @@ public class Robot extends IterativeRobot
 				
 		autoChooser = new SendableChooser();
 		autoChooser.addObject("Do Nothing", new DoNothing());
-		autoChooser.addObject("Move Robot To Auto Zone", new MoveRobotToAutoZone("Auto Speed", "Auto Inches"));
+		autoChooser.addObject("Move Robot To Auto Zone", new MoveRobotToAutoZone(0.5,RobotMap.DISTANCE_TO_AUTO_ZONE, RobotMap.DRIVE_CREEP_SPEED, RobotMap.CREEP_DISTANCE)); //"Auto Speed", "Auto Inches"));
 		autoChooser.addObject("Single Tote", new MoveRobotAndToteToAutoZone());
 		autoChooser.addDefault("Single Container", new MoveRobotAndContainerToAutoZone());
 		autoChooser.addObject("Single Tote AND Container", new MoveRobotToteAndContainerToAutoZone());

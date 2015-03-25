@@ -56,7 +56,7 @@ public class OI
 		// Smart dashboard numbers
 		SmartDashboard.putNumber("Dampening", .9);
 	
-		SmartDashboard.putNumber("Forward Speed", 0.3);
+/*		SmartDashboard.putNumber("Forward Speed", 0.3);
 
 		SmartDashboard.putNumber("Drive Inches", 10);
 
@@ -70,10 +70,10 @@ public class OI
 		SmartDashboard.putNumber("Creep Magnitude", .2);
 		
 		SmartDashboard.putNumber("Auto Speed", 0.5);
-		SmartDashboard.putNumber("Auto Inches", 60);
+		SmartDashboard.putNumber("Auto Inches", 60);*/
 
 		// Smart dashboard buttons
-		SmartDashboard.putData(new DriveStraightDistance("Forward Speed", "Drive Inches"));
+		/*SmartDashboard.putData(new DriveStraightDistance("Forward Speed", "Drive Inches"));
 		SmartDashboard.putData(new DriveStraight("Forward Speed", 1));
 		SmartDashboard.putData(new CreepToObject("Target Range", "Creep Speed"));
 		SmartDashboard.putData(new DriveToObject("Forward Speed", "Brake Range", "Target Range", "Creep Speed"));
@@ -101,7 +101,7 @@ public class OI
 
 		SmartDashboard.putData(new ResetGyro());
 		SmartDashboard.putData(new ResetEncoder());
-		
+*/		
 		// Joystick button mapping
 		secondaryButton1.whenPressed(new PickupTote());
 		
