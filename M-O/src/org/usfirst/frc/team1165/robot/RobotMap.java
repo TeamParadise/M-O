@@ -21,7 +21,7 @@ public class RobotMap
     public static final double ROBOT_BACKUP_FROM_SCORING_PLATFORM 	=  31;		// Inches
     public static final double WAIT_BETWEEN_PNEUMATIC_ACTIONS 		=  0.8;	// Seconds 
     public static final double WAIT_FOR_SUBSYSTEM_TO_COMPLETE	 	=  0.01; 	// Seconds 
-    public static final double DISTANCE_TO_AUTO_ZONE 				=  60;		// Inches
+    public static final double DISTANCE_TO_AUTO_ZONE 				=  65;		// Inches
     public static final double CREEP_DISTANCE 						=  30;		// Inches
     public static final double TCAS_DISTANCE 						=  90;		// Inches
     public static final double TCAS_SITANDSPIN 						=  90;		// Inches

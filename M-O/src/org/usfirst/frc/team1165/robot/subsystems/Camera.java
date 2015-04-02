@@ -89,7 +89,7 @@ public class Camera extends Subsystem implements Runnable
 			processFrame();
 			try
 			{
-				Thread.sleep(20);
+				Thread.sleep(40);
 			}
 			catch (InterruptedException e)
 			{

@@ -21,7 +21,7 @@ public class ExcreteOnScoringPlatform extends CommandGroup
 		addSequential(new WaitCommand(RobotMap.WAIT_BETWEEN_PNEUMATIC_ACTIONS/2));
 		addSequential(new LowerTotes());
 		addSequential(new WaitCommand(RobotMap.WAIT_BETWEEN_PNEUMATIC_ACTIONS));
-		addSequential(new DriveStraightDistanceIncludeUltrasonic(-RobotMap.DRIVE_SPEED*.6667, RobotMap.ROBOT_BACKUP_FROM_SCORING_PLATFORM), .5);
+		addSequential(new DriveStraightDistanceIncludeUltrasonic(-RobotMap.DRIVE_SPEED*.6667, RobotMap.ROBOT_BACKUP_FROM_SCORING_PLATFORM));
 		addSequential(new WaitCommand(0.1));
 		addSequential(new SetDefaultRobotPositions());
 	}
