@@ -14,6 +14,7 @@ import org.usfirst.frc.team1165.robot.commands.MoveRobotANDTwoTotesToAutoZone;
 import org.usfirst.frc.team1165.robot.commands.MoveRobotContainerAndTwoTotesToAutoZone;
 import org.usfirst.frc.team1165.robot.commands.MoveRobotToAutoZone;
 import org.usfirst.frc.team1165.robot.commands.MoveRobotToteAndContainerToAutoZone;
+import org.usfirst.frc.team1165.robot.commands.PickupToteAndContainer;
 import org.usfirst.frc.team1165.robot.commands.RotateToPushContainerOutOfWay;
 import org.usfirst.frc.team1165.robot.subsystems.BoxPickupWheels;
 import org.usfirst.frc.team1165.robot.subsystems.Camera;
@@ -49,9 +50,8 @@ public class Robot extends IterativeRobot
 		autoChooser.addObject("Move Robot To Auto Zone", new MoveRobotToAutoZone(0.5,RobotMap.DISTANCE_TO_AUTO_ZONE, RobotMap.DRIVE_CREEP_SPEED, RobotMap.CREEP_DISTANCE)); //"Auto Speed", "Auto Inches"));
 		autoChooser.addObject("Single Tote", new MoveRobotAndToteToAutoZone());
 		autoChooser.addDefault("Single Container", new MoveRobotAndContainerToAutoZone());
-		autoChooser.addObject("Single Tote AND Container", new MoveRobotToteAndContainerToAutoZone());
-		autoChooser.addObject("Move Two Totes to Auto Zone", new RotateToPushContainerOutOfWay());
-		autoChooser.addObject("Move Two Totes And Container To AutoZone", new MoveRobotContainerAndTwoTotesToAutoZone());
+		autoChooser.addObject("Single Tote AND Container To Auto Zone", new MoveRobotToteAndContainerToAutoZone());
+		autoChooser.addObject("PICKUP Tote And Container", new PickupToteAndContainer());
 		SmartDashboard.putData("Auto:", autoChooser);
 	}
 

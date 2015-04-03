@@ -18,6 +18,7 @@ import org.usfirst.frc.team1165.robot.commands.PickupWheelsStop;
 import org.usfirst.frc.team1165.robot.commands.ResetEncoder;
 import org.usfirst.frc.team1165.robot.commands.ResetGyro;
 import org.usfirst.frc.team1165.robot.commands.RotateToHeading;
+import org.usfirst.frc.team1165.robot.commands.SecureTotes;
 import org.usfirst.frc.team1165.robot.commands.piston.LiftTotes;
 import org.usfirst.frc.team1165.robot.commands.piston.LowerTotes;
 import org.usfirst.frc.team1165.robot.commands.piston.MovePickupWheelsIn;
@@ -118,6 +119,7 @@ public class OI
 
 		secondaryButton10.whenPressed(new ExcreteOnStep());
 		secondaryButton11.whenPressed(new ExcreteOnScoringPlatform());
+		secondaryButton12.whenPressed(new SecureTotes());
 	}
 
 	public double getDampening()
