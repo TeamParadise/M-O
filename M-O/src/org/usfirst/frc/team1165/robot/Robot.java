@@ -33,7 +33,7 @@ public class Robot extends IterativeRobot
 	public static final Gyroscope gyroscope = new Gyroscope();
 	public static final QuadEncoder quadEncoder = new QuadEncoder();
 	public static final BoxPickupWheels boxPickupWheels = new BoxPickupWheels();
-	public static final Camera camera = new Camera(CameraMode.THREAD);
+	public static Camera camera;
 	public static final ToteLifterStops toteLifterStops = new ToteLifterStops();
 	public static OI oi;
 	public static final CanPickupArms canPickupArms = new CanPickupArms();
@@ -53,6 +53,9 @@ public class Robot extends IterativeRobot
 		autoChooser.addObject("Single Tote AND Container To Auto Zone", new MoveRobotToteAndContainerToAutoZone());
 		autoChooser.addObject("PICKUP Tote And Container", new PickupToteAndContainer());
 		SmartDashboard.putData("Auto:", autoChooser);
+		
+		//camera = new Camera(CameraMode.THREAD);
+		camera = new Camera(CameraMode.THREAD, RobotMap.primaryCameraName, null);
 	}
 
 	public void disabledPeriodic()

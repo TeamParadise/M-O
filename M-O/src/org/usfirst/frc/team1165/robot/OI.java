@@ -178,4 +178,9 @@ public class OI
 			? -secondaryJoystick.getY() 
 			: 0;
 	}
-}
+	
+	public boolean useSecondaryCamera()
+	{
+		return secondaryButton2.get();
+	}
+	}
