@@ -1,7 +1,6 @@
 package org.usfirst.frc.team1165.robot.commands;
 
 import org.usfirst.frc.team1165.robot.RobotMap;
-import org.usfirst.frc.team1165.robot.commands.piston.MovePickupWheelsIn;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class MoveRobotANDTwoTotesToAutoZone extends CommandGroup

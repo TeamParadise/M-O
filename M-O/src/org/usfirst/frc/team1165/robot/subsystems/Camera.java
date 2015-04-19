@@ -5,8 +5,6 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import javafx.scene.shape.Path;
-
 import org.usfirst.frc.team1165.robot.Robot;
 import org.usfirst.frc.team1165.robot.RobotMap;
 import org.usfirst.frc.team1165.robot.commands.ProcessCameraFrames;
@@ -15,7 +13,6 @@ import com.ni.vision.NIVision;
 import com.ni.vision.NIVision.Image;
 
 import edu.wpi.first.wpilibj.CameraServer;
-import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -32,7 +29,17 @@ public class Camera extends Subsystem implements Runnable
 	private Image frame;
 	private CameraMode mode;
 	
+	// This file on the roboRIO file system is used to store dumps of exceptions related to the camera:
 	private final static String exceptionLogFile = "/home/lvuser/data/CameraException.txt";
+	
+	// This file on the roboRIO file system is used to store a list of the supported video modes:
+	private final static String videoModesFile = "/home/lvuser/data/NIVision_VideoModes.txt";
+	
+	// This file on the roboRIO file system is used to store a list of the various vision attributes:
+	private final static String visionAttributesFile = "/home/lvuser/data/NIVision_Attributes.txt";
+	
+	// The default video mode. To see what modes are supported, load the robot code at
+	// least once and look at the file indicated by videoModesFile above.
 	private final static String videoMode = "640 x 480 YUY 2 30.00 fps";
 	
 	/**
@@ -41,7 +48,7 @@ public class Camera extends Subsystem implements Runnable
 	 */
 	public Camera(CameraMode mode)
 	{
-		this(mode, RobotMap.cameraName, null);
+		this(mode, RobotMap.primaryCameraName, null);
 	}
 	
 	public Camera(CameraMode mode, String primaryCameraName, String secondaryCameraName)
@@ -88,9 +95,11 @@ public class Camera extends Subsystem implements Runnable
 		
 		try
 		{
+			// Log some interesting vision processing information at /home/lvuser/data on the roboRIO file system.
+			
 			new File("/home/lvuser/data").mkdirs();
 			
-			PrintWriter pw = new PrintWriter("/home/lvuser/data/NIVision_VideoModes.txt");
+			PrintWriter pw = new PrintWriter(videoModesFile);
 			NIVision.dxEnumerateVideoModesResult result = NIVision.IMAQdxEnumerateVideoModes(primarySession);
 			pw.println("Current: \"" + result.videoModeArray[result.currentMode].Name + '"');
 			pw.println();
@@ -100,13 +109,14 @@ public class Camera extends Subsystem implements Runnable
 			}
 			pw.close();
 			
-			NIVision.IMAQdxWriteAttributes(primarySession, "/home/lvuser/data/NIVision_Attributes.txt");
+			NIVision.IMAQdxWriteAttributes(primarySession, visionAttributesFile);
 		}
 		catch (Exception ex)
 		{
 			// do nothing
 		}
 				
+		// Default to acquiring images from the primary camera:
 		NIVision.IMAQdxConfigureGrab(primarySession);
 		NIVision.IMAQdxStartAcquisition(primarySession);
 		currentSession = primarySession;
@@ -133,6 +143,9 @@ public class Camera extends Subsystem implements Runnable
 		{
 			if (hasSecondaryCamera && Robot.oi.useSecondaryCamera())
 			{
+				// We get here if we are acquiring images from the primary camera but
+				// the user wants images from the secondary camera. Stop acquiring from
+				// the primary camera and switch to acquiring from the secondary camera.
 				try
 				{
 					NIVision.IMAQdxStopAcquisition(currentSession);
@@ -159,6 +172,9 @@ public class Camera extends Subsystem implements Runnable
 		}
 		else if (!Robot.oi.useSecondaryCamera())
 		{
+			// We get here if we are acquiring images from the secondary camera but
+			// the user wants images from the primary camera. Stop acquiring from
+			// the secondary camera and switch to acquiring from the primary camera.
 			try
 			{
 				NIVision.IMAQdxStopAcquisition(currentSession);

@@ -10,12 +10,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team1165.robot.commands.DoNothing;
 import org.usfirst.frc.team1165.robot.commands.MoveRobotAndContainerToAutoZone;
 import org.usfirst.frc.team1165.robot.commands.MoveRobotAndToteToAutoZone;
-import org.usfirst.frc.team1165.robot.commands.MoveRobotANDTwoTotesToAutoZone;
-import org.usfirst.frc.team1165.robot.commands.MoveRobotContainerAndTwoTotesToAutoZone;
 import org.usfirst.frc.team1165.robot.commands.MoveRobotToAutoZone;
 import org.usfirst.frc.team1165.robot.commands.MoveRobotToteAndContainerToAutoZone;
 import org.usfirst.frc.team1165.robot.commands.PickupToteAndContainer;
-import org.usfirst.frc.team1165.robot.commands.RotateToPushContainerOutOfWay;
 import org.usfirst.frc.team1165.robot.subsystems.BoxPickupWheels;
 import org.usfirst.frc.team1165.robot.subsystems.Camera;
 import org.usfirst.frc.team1165.robot.subsystems.Camera.CameraMode;
@@ -54,8 +51,11 @@ public class Robot extends IterativeRobot
 		autoChooser.addObject("PICKUP Tote And Container", new PickupToteAndContainer());
 		SmartDashboard.putData("Auto:", autoChooser);
 		
-		//camera = new Camera(CameraMode.THREAD);
-		camera = new Camera(CameraMode.THREAD, RobotMap.primaryCameraName, null);
+		//Use this to use just the primary camera:
+		camera = new Camera(CameraMode.THREAD);
+		
+		// Use this to use both cameras with the secondary camera being enabled in conjunction with control of the container pickup arm:
+		//camera = new Camera(CameraMode.THREAD, RobotMap.primaryCameraName, RobotMap.secondaryCameraName);
 	}
 
 	public void disabledPeriodic()
